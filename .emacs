@@ -29,3 +29,5 @@
 (remove-hook 'kill-buffer-query-functions 'server-kill-buffer-query-function)
 (setq make-backup-files "~/.saves")
 (global-set-key (kbd "C-c c") 'comment-or-uncomment-region)
+(global-set-key (kbd "C-S-<insert>") 'yank)
+(add-to-list 'auto-mode-alist (cons (rx ".js" eos) 'js2-mode))
