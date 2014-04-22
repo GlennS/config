@@ -31,3 +31,18 @@
 (global-set-key (kbd "C-c c") 'comment-or-uncomment-region)
 (global-set-key (kbd "C-S-<insert>") 'yank)
 (add-to-list 'auto-mode-alist (cons (rx ".js" eos) 'js2-mode))
+
+(define-derived-mode nhm-mode lisp-mode "nhm"
+  "Major mode for the NHM"
+  (set (make-local-variable 'font-lock-defaults)
+       '((
+	  ("\\w+:" . font-lock-keyword-face)
+	  ("\\[" . font-lock-constant-face)
+	  ("\\]" . font-lock-constant-face)
+	  ("(\\(\\w+\\)" 1 font-lock-function-name-face)
+	  )
+	 nil ;only kw
+	 nil ; case fold
+	 (("-.+-/*"."w")) ; syntax table
+	 backward-paragraph))
+)
