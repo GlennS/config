@@ -2,4 +2,6 @@ import XMonad
 import XMonad.Config.Gnome
 
 main = do
-    xmonad $ gnomeConfig
+    xmonad $ gnomeConfig { 
+        modMask = mod4Mask
+    }
