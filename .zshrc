@@ -10,3 +10,5 @@ zstyle :compinstall filename '/home/glenn/.zshrc'
 autoload -Uz compinit
 compinit
 # End of lines added by compinstall
+
+export PATH=$PATH:~/.cabal/bin
