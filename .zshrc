@@ -12,3 +12,6 @@ compinit
 # End of lines added by compinstall
 
 export PATH=$PATH:~/.cabal/bin
+source ~/.zsh/git_prompt.zsh
+
+export PS1='[%n@%m:%/]%#'
