@@ -13,7 +13,7 @@
  '(org-agenda-files (quote ("~/Dropbox/CSE/todo_work.org")))
  '(org-babel-load-languages (quote ((awk . t) (dot . t))))
  '(org-confirm-babel-evaluate nil)
- '(org-export-backends (quote (ascii beamer html icalendar latex texinfo)))
+ '(org-export-backends (quote (ascii beamer html icalendar latex md texinfo)))
  '(org-latex-pdf-process (quote ("latexmk -pdflatex='xelatex --shell-escape -interaction nonstopmode -output-directory %o' -pdf -f %f")))
  '(org-latex-to-pdf-process (quote ("latexmk -pdflatex='xelatex --shell-escape -interaction nonstopmode -output-directory %o' -pdf -f %f")))
  '(package-archives (quote (("gnu" . "http://elpa.gnu.org/packages/") ("melpa" . "http://melpa.milkbox.net/packages/"))))
