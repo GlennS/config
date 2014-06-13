@@ -15,3 +15,4 @@ export PATH=$PATH:~/.cabal/bin
 source ~/.zsh/git_prompt.zsh
 
 export PS1='[%n@%m:%/]%#'
+export _JAVA_AWT_WM_NONREPARENTING=1  
