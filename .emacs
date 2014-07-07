@@ -5,6 +5,9 @@
  ;; If there is more than one, they won't work right.
  '(backup-directory-alist (quote (("." . "~/backups"))))
  '(custom-enabled-themes (quote (wombat)))
+ '(display-time-24hr-format t)
+ '(display-time-day-and-date t)
+ '(display-time-mode t)
  '(global-rainbow-delimiters-mode t)
  '(haskell-mode-hook (quote (turn-on-haskell-indent)))
  '(ido-mode (quote both) nil (ido))
