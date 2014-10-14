@@ -38,6 +38,8 @@
 (global-set-key (kbd "C-S-<insert>") 'yank)
 (add-to-list 'auto-mode-alist (cons (rx ".js" eos) 'js2-mode))
 
+(tool-bar-mode -1)
+
 (define-derived-mode nhm-mode lisp-mode "nhm"
   "Major mode for the NHM"
   (set (make-local-variable 'font-lock-defaults)
