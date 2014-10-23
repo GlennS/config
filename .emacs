@@ -38,6 +38,7 @@
 (global-set-key (kbd "C-c c") 'comment-or-uncomment-region)
 (global-set-key (kbd "C-S-<insert>") 'yank)
 (add-to-list 'auto-mode-alist (cons (rx ".js" eos) 'js2-mode))
+(add-to-list 'auto-mode-alist (cons (rx ".php" eos) 'web-mode))
 
 (tool-bar-mode -1)
 
