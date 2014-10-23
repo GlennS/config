@@ -1,11 +1,12 @@
 import XMonad
-import XMonad.Config.Gnome
+import XMonad.Config.Xfce
 import XMonad.Util.EZConfig (additionalKeysP)
 
-main = do
-    xmonad $ 
-               (gnomeConfig { 
-                  modMask = mod4Mask
-                }
-                `additionalKeysP`
-                [("M-p", spawn "dmenu_run")])
+main = xmonad $ xfceConfig
+       { 
+	 modMask = mod4Mask
+        ,terminal = "x-terminal-emulator"   
+       } `additionalKeysP`
+       [
+	("M-p", spawn "dmenu_run")
+       ]
