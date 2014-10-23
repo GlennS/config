@@ -11,16 +11,17 @@
  '(global-rainbow-delimiters-mode t)
  '(haskell-mode-hook (quote (turn-on-haskell-indent)))
  '(ido-mode (quote both) nil (ido))
- '(initial-buffer-choice "~/Dropbox/cse/todo_work.org")
+ '(initial-buffer-choice "~/work/todo.org")
  '(nxml-slash-auto-complete-flag t)
- '(org-agenda-files (quote ("~/Dropbox/cse/todo_work.org")))
+ '(org-agenda-files (quote ("~/work/todo.org")))
  '(org-babel-load-languages (quote ((awk . t) (dot . t))))
  '(org-confirm-babel-evaluate nil)
  '(org-export-backends (quote (ascii beamer html icalendar latex md texinfo)))
  '(org-latex-pdf-process (quote ("latexmk -pdflatex='xelatex --shell-escape -interaction nonstopmode -output-directory %o' -pdf -f %f")))
  '(org-latex-to-pdf-process (quote ("latexmk -pdflatex='xelatex --shell-escape -interaction nonstopmode -output-directory %o' -pdf -f %f")))
  '(package-archives (quote (("gnu" . "http://elpa.gnu.org/packages/") ("melpa" . "http://melpa.milkbox.net/packages/"))))
- '(safe-local-variable-values (quote ((org-latex-listings . t)))))
+ '(safe-local-variable-values (quote ((org-latex-listings . t))))
+ '(vc-follow-symlinks nil))
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
