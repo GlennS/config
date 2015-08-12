@@ -71,3 +71,26 @@
   (interactive)
   (mapc 'kill-buffer (delq (current-buffer) (buffer-list))))
 
+;;; Yay lovely PHP
+(add-hook 'after-init-hook #'global-flycheck-mode) ; Load flycheck
+
+(eval-after-load 'flycheck
+  '(progn
+     (flycheck-define-checker web-mode-php
+       "This is the same as the default php checker except just for web-mode.
+It continues checking for javascript errors if there are no more PHP errors."
+       
+       :command ("php" "-l" "-d" "error_reporting=E_ALL" "-d" "display_errors=1" "-d" "log_errors=0" source)
+       :error-patterns ((error line-start (or "Parse" "Fatal" "syntax") " error" (any ":" ",") " " (message) " in " (file-name) " on line " line line-end))
+       :modes (web-mode))
+
+     (add-to-list 'flycheck-checkers 'web-mode-php) 
+     (delete 'handlebars flycheck-checkers) 
+     ))
+
+(add-to-list 'auto-mode-alist '("\\.php$" . web-mode))
+
+(add-hook 'web-mode-hook #'flycheck-mode)
+
+(provide `.emacs)
+;;; .emacs ends here
