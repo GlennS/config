@@ -64,4 +64,10 @@
 	 nil ; case fold
 	 (("-.+-/*"."w")) ; syntax table
 	 backward-paragraph))
-)
+  )
+
+(defun kill-other-buffers ()
+  "Kill all other buffers [http://emacswiki.org/emacs/KillingBuffers#toc2]."
+  (interactive)
+  (mapc 'kill-buffer (delq (current-buffer) (buffer-list))))
+
