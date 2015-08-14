@@ -12,6 +12,7 @@
  '(global-rainbow-delimiters-mode t)
  '(haskell-mode-hook (quote (turn-on-haskell-indent)))
  '(ido-mode (quote both) nil (ido))
+ '(image-dired-external-viewer "/usr/bin/feh")
  '(initial-buffer-choice "~/work/todo.org")
  '(nxml-slash-auto-complete-flag t)
  '(org-agenda-files (quote ("~/work/todo.org")))
