@@ -5,6 +5,7 @@
  ;; If there is more than one, they won't work right.
  '(auto-save-default nil)
  '(backup-directory-alist (quote (("." . "~/backups"))))
+ '(browse-url-browser-function (quote browse-url-chromium))
  '(custom-enabled-themes (quote (wombat)))
  '(display-time-24hr-format t)
  '(display-time-day-and-date t)
