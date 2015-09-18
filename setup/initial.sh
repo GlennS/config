@@ -17,6 +17,8 @@ adduser "${SUDO_WHO}" sudo;
 
 aptitude install zsh;
 chsh cse -s /bin/zsh;
+
+aptitude install git;
 exit;
 exit;
 

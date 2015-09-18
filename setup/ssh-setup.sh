@@ -14,5 +14,7 @@ pushd .ssh > /dev/null;
 git remote remove origin;
 git remote add origin git@github.com:GlennS/.ssh.git;
 chmod 600 versioncontrol.private.openssh cse_server_root_key;
+ssh-agent;
+ssh-add versioncontrol.private.openssh;
 
 popd > /dev/null;

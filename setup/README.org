@@ -1,12 +1,14 @@
-I need to make some decisions about how I distribute this to computers:
- + On a USB stick.
- + When creating a VM.
-
 * Computer Setup
-A Gix installation for works.
+A Guix installation for a work machine.
 
-Requires a Debian base.
+Requires a Debian base, and access to my .ssh keys.
 
+You'd need to modify it to use your own ssh setup.
+
+** How to use
+You can type the first steps in manually unless you can get this repository on there.
+
+** Steps
 First run [[file:initial.sh][initial setup]].
 
 Then run [[file:ssh-setup.sh][ssh setup]].
@@ -22,7 +24,7 @@ git clone git@github.com:GlennS/config.git;
   sudo aptitude update;
 #+END_SRC
 
-If running in VirtualBox: [[file:virtualbox.sh][install VirtualBox guest extensions]].
+If running in VirtualBox: [[http://virtualboxes.org/doc/installing-guest-additions-on-debian][install VirtualBox guest extensions]]. Don't install the 'virtualbox-guest-additions-iso' package, which is actually for a host machine.
 
 Then run [[file:guix.sh][Guix setup]].
 
