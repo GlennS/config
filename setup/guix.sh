@@ -16,10 +16,10 @@ pushd guix-tmp > /dev/null;
 
 wget "ftp://alpha.gnu.org/gnu/guix/${GUIX_FILE}";
 tar xf "${GUIX_FILE}";
-sudo mv var/guix /var/ && mv gnu /;
+sudo mv var/guix /var/ -f && mv gnu / -f;
 
 popd > /dev/null;
-rmdir guix-tmp;
+rm -rf guix-tmp;
 
 sudo ln -sf /var/guix/profiles/per-user/root/guix-profile ~root/.guix-profile;
 
