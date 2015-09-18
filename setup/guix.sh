@@ -9,7 +9,7 @@ set -e;
 
 GUIX_VERSION="0.8.3";
 GUIX_SYSTEM="x86_64-linux"
-GUIX_FILE="guix-binary-${GUIX_VERSINO}.${GUIX_SYSTEM}.tar.xz";
+GUIX_FILE="guix-binary-${GUIX_VERSION}.${GUIX_SYSTEM}.tar.xz";
 
 mkdir -p guix-tmp;
 pushd guix-tmp > /dev/null;
