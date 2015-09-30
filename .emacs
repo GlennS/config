@@ -7,6 +7,9 @@
  '(backup-directory-alist (quote (("." . "~/backups"))))
  '(browse-url-browser-function (quote browse-url-chromium))
  '(custom-enabled-themes (quote (wombat)))
+ '(custom-safe-themes
+   (quote
+    ("19352d62ea0395879be564fc36bc0b4780d9768a964d26dfae8aad218062858d" default)))
  '(display-time-24hr-format t)
  '(display-time-day-and-date t)
  '(display-time-mode t)
@@ -31,6 +34,7 @@
     (("gnu" . "http://elpa.gnu.org/packages/")
      ("melpa" . "http://melpa.milkbox.net/packages/"))))
  '(safe-local-variable-values (quote ((org-latex-listings . t))))
+ '(tramp-default-method "ssh")
  '(vc-follow-symlinks nil))
 
 (custom-set-faces
@@ -44,7 +48,7 @@
 
 (server-start)
 (remove-hook 'kill-buffer-query-functions 'server-kill-buffer-query-function)
-(setq make-backup-files "~/.saves")
+(setq make-backup-files nil)
 (global-set-key (kbd "C-c c") 'comment-or-uncomment-region)
 (global-set-key (kbd "C-c a") 'org-agenda)
 (global-set-key (kbd "C-S-<insert>") 'yank)
@@ -73,9 +77,9 @@
   (interactive)
   (mapc 'kill-buffer (delq (current-buffer) (buffer-list))))
 
-;;; Yay lovely PHP
 (add-hook 'after-init-hook #'global-flycheck-mode) ; Load flycheck
 
+;;; Yay lovely PHP
 (eval-after-load 'flycheck
   '(progn
      (flycheck-define-checker web-mode-php
@@ -87,12 +91,15 @@ It continues checking for javascript errors if there are no more PHP errors."
        :modes (web-mode))
 
      (add-to-list 'flycheck-checkers 'web-mode-php) 
-     (delete 'handlebars flycheck-checkers) 
+     (delete 'handlebars flycheck-checkers)
      ))
 
 (add-to-list 'auto-mode-alist '("\\.php$" . web-mode))
 
 (add-hook 'web-mode-hook #'flycheck-mode)
+
+;;; JSON
+(add-hook 'json-mode 'flycheck-json-load)
 
 (provide `.emacs)
 ;;; .emacs ends here
