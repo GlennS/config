@@ -1,0 +1,9 @@
+[push]
+	default = simple
+[user]
+	name = Glenn Searby
+	email = glenn.searby@gmail.com
+[merge]
+	tool = meld
+[core]
+	editor = emacs
