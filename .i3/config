@@ -159,8 +159,19 @@ exec /home/glenn/.screenlayout/setup-dual-monitors.sh
 workspace 1 output "DP1"
 workspace 2 output "DP1"
 workspace 3 output "eDP1"
-exec --no-startup-id i3-msg 'workspace 1; exec /usr/bin/emacs'
-exec --no-startup-id i3-msg 'workspace 2; exec /usr/bin/chromium'
-exec --no-startup-id i3-msg 'workspace 3; exec /usr/bin/i3-sensible-terminal -e "/usr/bin/ssh-add /home/glenn/.ssh/versioncontrol.private.openssh"'
-exec --no-startup-id i3-msg 'workspace 3; exec /usr/bin/i3-sensible-terminal'
-exec --no-startup-id i3-msg 'workspace 3; exec /usr/bin/keepass2'
+workspace 4 output "DP1"
+
+assign [class="emacs"] 1
+assign [class="Emacs"] 1
+assign [class="Chromium"] 2
+assign [class="keepass2"] 3
+assign [class="quasselclient"] 4
+
+exec emacs;
+exec chromium;
+exec i3-msg 'workspace 3; exec /usr/bin/i3-sensible-terminal -e "/usr/bin/ssh-add /home/glenn/.ssh/versioncontrol.private.openssh"'
+exec i3-msg 'workspace 3; exec /usr/bin/i3-sensible-terminal'
+exec keepass2;
+exec quasselclient;
+exec --no-startup-id nm-applet;
+exec --no-startup-id xmodmap ~/.Xmodmap;
