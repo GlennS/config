@@ -8,16 +8,16 @@ SAVEHIST=1000
 bindkey -e
 
 # End of lines configured by zsh-newuser-install
-# The following lines were added by compinstall
+# The following lines were added by compinstall - which is something to do with zsh?
 zstyle :compinstall filename '/home/glenn/.zshrc'
 
 autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 
-export PATH=$PATH:~/.cabal/bin
-source ~/.zsh/git_prompt.zsh
+export EDITOR='emacsclient';
 
-export PS1='[%n@%m:%/] '
-export _JAVA_AWT_WM_NONREPARENTING=1
+source ~/config/.zsh/git_prompt.zsh;
 
+export PS1='[%n@%m:%/] ';
+export _JAVA_AWT_WM_NONREPARENTING=1;
