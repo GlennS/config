@@ -20,7 +20,7 @@
  '(initial-buffer-choice "~/work/todo.org")
  '(nxml-slash-auto-complete-flag t)
  '(org-agenda-files (quote ("~/work/todo.org")))
- '(org-babel-load-languages (quote ((awk . t) (dot . t))))
+ '(org-babel-load-languages (quote ((awk . t) (dot . t) (R . t))))
  '(org-confirm-babel-evaluate nil)
  '(org-export-backends (quote (ascii beamer html icalendar latex md texinfo)))
  '(org-latex-pdf-process
