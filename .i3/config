@@ -139,8 +139,10 @@ bindsym $mod+r mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-        status_command i3status
+	status_command i3status --config ~/.i3/status.conf
 	position top
+	bindsym button4 nop
+	bindsym button5 nop
 }
 
 # No PC speaker beeps
@@ -174,4 +176,5 @@ exec i3-msg 'workspace 3; exec /usr/bin/i3-sensible-terminal'
 exec keepass2;
 exec quasselclient;
 exec --no-startup-id nm-applet;
+exec --no-startup-id pasystray;
 exec --no-startup-id xmodmap ~/.Xmodmap;
