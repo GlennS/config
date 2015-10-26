@@ -167,7 +167,7 @@ assign [class="emacs"] 1
 assign [class="Emacs"] 1
 assign [class="Chromium"] 2
 assign [class="keepass2"] 3
-assign [class="quasselclient"] 4
+assign [class="Quasselclient"] 4
 
 exec emacs;
 exec chromium;
