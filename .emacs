@@ -37,6 +37,9 @@
  '(tramp-default-method "ssh")
  '(vc-follow-symlinks nil))
 
+;; Disable _ to -> substitution in ESS.
+(ess-toggle-underscore nil)
+
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
