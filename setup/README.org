@@ -29,3 +29,6 @@ If running in VirtualBox: [[http://virtualboxes.org/doc/installing-guest-additio
 Then run [[file:guix.sh][Guix setup]].
 
 Then run config setup?
+
+** TODO
+firmware-iwlwifi
