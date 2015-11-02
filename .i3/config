@@ -141,8 +141,9 @@ bindsym $mod+r mode "resize"
 bar {
 	status_command i3status --config ~/.i3/status.conf
 	position top
-	bindsym button4 nop
-	bindsym button5 nop
+	# These lines errors in 4.8
+	# bindsym button4 nop
+	# bindsym button5 nop
 }
 
 # No PC speaker beeps
@@ -174,7 +175,7 @@ exec chromium;
 exec i3-msg 'workspace 3; exec /usr/bin/i3-sensible-terminal -e "/usr/bin/ssh-add /home/glenn/.ssh/versioncontrol.private.openssh"'
 exec i3-msg 'workspace 3; exec /usr/bin/i3-sensible-terminal'
 exec keepass2;
-exec quasselclient;
+exec quasselclient --configdir="~/.quassel";
 exec --no-startup-id nm-applet;
 exec --no-startup-id pasystray;
 exec --no-startup-id xmodmap ~/.Xmodmap;
