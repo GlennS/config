@@ -141,9 +141,10 @@ bindsym $mod+r mode "resize"
 bar {
 	status_command i3status --config ~/.i3/status.conf
 	position top
-	# These lines errors in 4.8
-	# bindsym button4 nop
-	# bindsym button5 nop
+	font pango:DejaVu Sans Mono 11
+	# These lines error in 4.8
+	# bindsym button4 nop "Disable scrollwheel in bar"
+	# bindsym button5 nop "Disable scrollwheel in bar"
 }
 
 # No PC speaker beeps
