@@ -20,6 +20,9 @@ Auto install elpa packages
  + pasystray
  + network-manager-gnome
  + firmware-iwlwifi
+ + libreoffice
+ + nautilus
+ + xarchiver
 
 * Git clones
  + work
@@ -31,3 +34,11 @@ Auto install elpa packages
 * Symlinks
 .quassel
 .emacs
+.Xresources
+.emacs
+feh
+.gitconfig
+.i3
+.screenlayout
+.zsh
+.zshrc
