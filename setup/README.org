@@ -8,6 +8,14 @@ You'd need to modify it to use your own ssh setup.
 ** How to use
 You can type the first steps in manually unless you can get this repository on there.
 
+*** USB Install
+Mount the USB stick, and go to the config directory.
+#+BEGIN_SRC sh
+  su root
+  mount /dev/sdb2 /mnt
+  cd /mnt/config
+#+END_SRC
+
 ** Steps
 First run [[file:initial.sh][initial setup]].
 
@@ -31,4 +39,4 @@ Then run [[file:guix.sh][Guix setup]].
 Then run config setup?
 
 ** TODO
-firmware-iwlwifi
+See [[file:TODO.org][TODO.org]] for progress.

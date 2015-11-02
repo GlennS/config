@@ -1,0 +1,33 @@
+* Learn Scheme Shell
+Because Bash is horrible
+
+* Make Guix work
+
+* Emacs
+Auto install elpa packages
+
+* Permissions
+ + .ssh
+ + config (directories, files separately)?
+
+* Missing aptitude installs
+ + emacs
+ + i3
+ + lightdm
+ + chromium
+ + quassel-client
+ + zsh
+ + pasystray
+ + network-manager-gnome
+ + firmware-iwlwifi
+
+* Git clones
+ + work
+ + .ssh
+ + config
+ + notes
+
+
+* Symlinks
+.quassel
+.emacs
