@@ -18,6 +18,8 @@
  '(ido-mode (quote both) nil (ido))
  '(image-dired-external-viewer "/usr/bin/feh")
  '(initial-buffer-choice "~/work/todo.org")
+ '(magit-push-always-verify nil)
+ '(magit-revert-buffers t)
  '(nxml-slash-auto-complete-flag t)
  '(org-agenda-files (quote ("~/work/todo.org")))
  '(org-babel-load-languages (quote ((awk . t) (dot . t) (R . t))))
