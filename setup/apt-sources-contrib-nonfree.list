@@ -1,7 +1,11 @@
 # Debian stable, including contrib and non-free packages.
 
-deb http://ftp.uk.debian.org/debian/ stable main contrib non-free
-deb-src http://ftp.uk.debian.org/debian/ stable main contrib non-free
+deb http://ftp.uk.debian.org/debian/ jessie main contrib non-free
+deb-src http://ftp.uk.debian.org/debian/ jessie main contrib non-free
 
-deb http://security.debian.org stable/updates main contrib non-free
-deb-src http://security.debian.org stable/updates main contrib non-free
+deb http://security.debian.org stable/jessie main contrib non-free
+deb-src http://security.debian.org stable/jessie main contrib non-free# 
+
+# See: https://wiki.debian.org/StableUpdates
+deb http://ftp.uk.debian.org/debian/ jessie-updates main contrib non-free
+deb-src http://ftp.uk.debian.org/debian/ jessie-updates main contrib non-free
