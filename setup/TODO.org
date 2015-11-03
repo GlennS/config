@@ -23,6 +23,7 @@ Auto install elpa packages
  + libreoffice
  + nautilus
  + xarchiver
+ + remmina
 
 * Git clones
  + work
@@ -42,3 +43,4 @@ feh
 .screenlayout
 .zsh
 .zshrc
+.remmina
