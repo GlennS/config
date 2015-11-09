@@ -24,6 +24,11 @@ Auto install elpa packages
  + nautilus
  + xarchiver
  + remmina
+ + gvfs-backends
+ + gvfs-fuse
+ + gvfs-bin
+ + seahorse
+ + cifs-utils (samba)
 
 * Git clones
  + work

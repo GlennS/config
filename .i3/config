@@ -144,9 +144,6 @@ exec /home/glenn/.screenlayout/setup-dual-monitors.sh
 # No capslock
 exec setxkbmap -option ctrl:nocaps
 
-# Mount my net folder (the CSE S:/ drive).
-exec smbnetfs net
-
 # Launch some applications in particular places.
 workspace 1 output "DP1"
 workspace 2 output "DP1"
@@ -158,6 +155,10 @@ assign [class="Emacs"] 1
 assign [class="chromium-browser"] 2
 assign [class="keepass2"] 3
 assign [class="Quasselclient"] 4
+
+# Make sure the S drive is mounted and symlinked.
+exec gvfs-mount "smb://CSE-BS3-FILE/Data";
+ln -s -f -T "/run/user/1000/gvfs/smb-share:server=cse-bs3-file,share=data" ~/S;
 
 exec emacs;
 exec chromium;
