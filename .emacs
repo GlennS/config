@@ -49,6 +49,14 @@
  ;; If there is more than one, they won't work right.
  )
 
+;; Change M-x <space> to toggle between ' ', '' and '\t'.
+(substitute-key-definition
+ 'just-one-space
+ (lambda ()
+   (interactive)
+   (cycle-spacing -1 t))
+ (current-global-map))
+
 (global-visual-line-mode 1)
 
 (server-start)
