@@ -158,7 +158,7 @@ assign [class="Quasselclient"] 4
 
 # Make sure the S drive is mounted and symlinked.
 exec gvfs-mount "smb://CSE-BS3-FILE/Data";
-ln -s -f -T "/run/user/1000/gvfs/smb-share:server=cse-bs3-file,share=data" ~/S;
+exec ln -s -f -T "/run/user/1000/gvfs/smb-share:server=cse-bs3-file,share=data" ~/S;
 
 exec emacs;
 exec chromium;
