@@ -19,7 +19,6 @@ Auto install elpa packages
  + zsh
  + pasystray
  + network-manager-gnome
- + firmware-iwlwifi
  + libreoffice
  + nautilus
  + xarchiver
@@ -29,6 +28,12 @@ Auto install elpa packages
  + gvfs-bin
  + seahorse
  + cifs-utils (samba)
+ + keepass2
+
+** Non-free
+ + firmware-iwlwifi
+ + firmware-realtek
+ + radeon
 
 * Git clones
  + work
