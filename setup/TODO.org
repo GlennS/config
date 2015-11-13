@@ -29,6 +29,7 @@ Auto install elpa packages
  + seahorse
  + cifs-utils (samba)
  + keepass2
+ + arandr
 
 ** Non-free
  + firmware-iwlwifi
