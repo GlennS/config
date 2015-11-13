@@ -15,6 +15,7 @@ Auto install elpa packages
  + i3
  + lightdm
  + chromium
+ + iceweasel
  + quassel-client
  + zsh
  + pasystray
@@ -35,6 +36,10 @@ Auto install elpa packages
  + firmware-iwlwifi
  + firmware-realtek
  + radeon
+
+* Update-Alternatives
+sudo update-alternatives --set x-www-browser /usr/bin/chromium
+sudo update-alternatives --set gnome-www-browser /usr/bin/chromium
 
 * Git clones
  + work
