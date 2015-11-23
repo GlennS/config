@@ -30,6 +30,9 @@ Auto install elpa packages
  + seahorse
  + cifs-utils (samba)
 
+* update-alternatives
+sudo update-alternatives --set x-www-browser /usr/bin/chromiuim
+sudo update-alternatives --set gnome-www-browser /usr/bin/chromium
 * Git clones
  + work
  + .ssh
