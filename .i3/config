@@ -155,6 +155,7 @@ assign [class="Emacs"] 1
 assign [class="chromium-browser"] 2
 assign [class="keepass2"] 3
 assign [class="Quasselclient"] 4
+assign [class="Eclipse"] 5
 
 # Make sure the S drive is mounted and symlinked.
 exec gvfs-mount "smb://CSE-BS3-FILE/Data";

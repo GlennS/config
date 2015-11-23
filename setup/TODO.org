@@ -44,6 +44,7 @@ sudo update-alternatives --set gnome-www-browser /usr/bin/chromium
 .quassel
 .emacs
 .Xresources
+.xsessionrc
 .emacs
 feh
 .gitconfig
