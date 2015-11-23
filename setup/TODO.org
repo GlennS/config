@@ -15,11 +15,11 @@ Auto install elpa packages
  + i3
  + lightdm
  + chromium
+ + iceweasel
  + quassel-client
  + zsh
  + pasystray
  + network-manager-gnome
- + firmware-iwlwifi
  + libreoffice
  + nautilus
  + xarchiver
@@ -29,6 +29,17 @@ Auto install elpa packages
  + gvfs-bin
  + seahorse
  + cifs-utils (samba)
+ + keepass2
+ + arandr
+
+** Non-free
+ + firmware-iwlwifi
+ + firmware-realtek
+ + radeon
+
+* Update-Alternatives
+sudo update-alternatives --set x-www-browser /usr/bin/chromium
+sudo update-alternatives --set gnome-www-browser /usr/bin/chromium
 
 * update-alternatives
 sudo update-alternatives --set x-www-browser /usr/bin/chromiuim
