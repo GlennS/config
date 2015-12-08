@@ -31,6 +31,7 @@ Auto install elpa packages
  + cifs-utils (samba)
  + keepass2
  + arandr
+ + meld
 
 ** Non-free
  + firmware-iwlwifi
