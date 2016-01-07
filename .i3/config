@@ -148,6 +148,8 @@ exec /home/glenn/.screenlayout/setup-dual-monitors.sh
 exec setxkbmap -option ctrl:nocaps
 
 # Launch some applications in particular places.
+workspace_layout tabbed
+
 workspace 1 output "DP1"
 workspace 2 output "DP1"
 workspace 3 output "eDP1"
@@ -159,8 +161,7 @@ assign [class="chromium-browser"] 2
 assign [class="keepass2"] 3
 assign [class="Quasselclient"] 4
 assign [class="Eclipse"] 5
-
-for_window [class="Eclipse" title="(Compare .*)|(Commit Changes )"] fullscreen
+for_window [class="Eclipse"] floating disable
 
 exec emacs;
 exec chromium;
