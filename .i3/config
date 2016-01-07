@@ -160,6 +160,8 @@ assign [class="keepass2"] 3
 assign [class="Quasselclient"] 4
 assign [class="Eclipse"] 5
 
+for_window [class="Eclipse" title="(Compare .*)|(Commit Changes )"] fullscreen
+
 exec emacs;
 exec chromium;
 # Add my ssh key
