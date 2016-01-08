@@ -31,6 +31,7 @@ Auto install elpa packages
  + cifs-utils (samba)
  + keepass2
  + arandr
+ + meld
 
 ** Non-free
  + firmware-iwlwifi
@@ -41,6 +42,9 @@ Auto install elpa packages
 sudo update-alternatives --set x-www-browser /usr/bin/chromium
 sudo update-alternatives --set gnome-www-browser /usr/bin/chromium
 
+* update-alternatives
+sudo update-alternatives --set x-www-browser /usr/bin/chromiuim
+sudo update-alternatives --set gnome-www-browser /usr/bin/chromium
 * Git clones
  + work
  + .ssh
@@ -52,6 +56,7 @@ sudo update-alternatives --set gnome-www-browser /usr/bin/chromium
 .quassel
 .emacs
 .Xresources
+.xsessionrc
 .emacs
 feh
 .gitconfig

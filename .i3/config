@@ -6,7 +6,10 @@ set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:DejaVu Sans Mono 11	
+font pango:DejaVu Sans Mono 11
+
+# Why would anyone want this key?
+bindsym Insert exec "echo '';"
 
 # Lock the screen and turn it off.
 bindsym $mod+l exec i3lock --dpms --inactivity-timeout 5
@@ -145,6 +148,8 @@ exec /home/glenn/.screenlayout/setup-dual-monitors.sh
 exec setxkbmap -option ctrl:nocaps
 
 # Launch some applications in particular places.
+workspace_layout tabbed
+
 workspace 1 output "DP1"
 workspace 2 output "DP1"
 workspace 3 output "eDP1"
@@ -155,13 +160,13 @@ assign [class="Emacs"] 1
 assign [class="chromium-browser"] 2
 assign [class="keepass2"] 3
 assign [class="Quasselclient"] 4
-
-# Make sure the S drive is mounted and symlinked.
-exec gvfs-mount "smb://CSE-BS3-FILE/Data";
-exec ln -s -f -T "/run/user/1000/gvfs/smb-share:server=cse-bs3-file,share=data" ~/S;
+assign [class="Eclipse"] 5
+for_window [class="Eclipse"] floating disable
+for_window [class="Eclipse" title="Compare .*"] fullscreen
 
 exec emacs;
 exec chromium;
+# Add my ssh key
 exec i3-msg 'workspace 3; exec /usr/bin/i3-sensible-terminal -e "/usr/bin/ssh-add /home/glenn/.ssh/versioncontrol.private.openssh"'
 exec i3-msg 'workspace 3; exec /usr/bin/i3-sensible-terminal'
 exec keepass2;
