@@ -65,3 +65,4 @@ feh
 .zsh
 .zshrc
 .remmina
+redshift.conf -> .config/redshift.conf

@@ -174,3 +174,4 @@ exec quasselclient --configdir="~/.quassel";
 exec --no-startup-id nm-applet;
 exec --no-startup-id pasystray;
 exec --no-startup-id xmodmap ~/.Xmodmap;
+exec --no-startup-id redshift;
