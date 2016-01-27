@@ -161,8 +161,9 @@ assign [class="chromium-browser"] 2
 assign [class="keepass2"] 3
 assign [class="Quasselclient"] 4
 assign [class="Eclipse"] 5
-for_window [class="Eclipse"] floating disable
-for_window [class="Eclipse" title="Compare .*"] fullscreen
+assign [class="NHM IDE"] 6
+
+for_window [class="Eclipse" title="Compare .*"] fullscreen;
 
 exec emacs;
 exec chromium;
