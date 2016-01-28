@@ -66,3 +66,4 @@ feh
 .zshrc
 .remmina
 redshift.conf -> .config/redshift.conf
+.davmail.properties
