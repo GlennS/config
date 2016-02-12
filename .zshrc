@@ -15,7 +15,7 @@ autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 
-export EDITOR='emacsclient';
+export EDITOR='emacsclient -a emacs';
 
 source ~/config/.zsh/git_prompt.zsh;
 
