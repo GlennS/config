@@ -11,6 +11,9 @@ font pango:DejaVu Sans Mono 11
 # Why would anyone want this key?
 bindsym Insert exec "echo '';"
 
+# Moving the mouse doesn't change which window is active.
+focus_follows_mouse no
+
 # Lock the screen and turn it off.
 bindsym $mod+l exec i3lock --dpms --inactivity-timeout 5
 
