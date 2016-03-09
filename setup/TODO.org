@@ -12,6 +12,7 @@ Auto install elpa packages
 
 * Missing aptitude installs
  + emacs
+ + emacs24-common-non-dfsg
  + i3
  + lightdm
  + chromium
