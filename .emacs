@@ -42,9 +42,6 @@
  '(tramp-default-method "ssh")
  '(vc-follow-symlinks nil))
 
-;; Disable _ to -> substitution in ESS.
-(ess-toggle-underscore nil)
-
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -116,6 +113,11 @@ It continues checking for javascript errors if there are no more PHP errors."
 
 ;;; JSON
 (add-hook 'json-mode 'flycheck-json-load)
+
+-;; Disable _ to -> substitution in ESS.
+(package-initialize)
+(require 'ess-site)
+(ess-toggle-underscore nil)
 
 (provide `.emacs)
 ;;; .emacs ends here
