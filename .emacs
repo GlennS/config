@@ -33,6 +33,7 @@
  '(org-latex-to-pdf-process
    (quote
     ("latexmk -pdflatex='xelatex --shell-escape -interaction nonstopmode -output-directory %o' -pdf -f %f")))
+ '(org-use-speed-commands t)
  '(package-archives
    (quote
     (("gnu" . "http://elpa.gnu.org/packages/")
