@@ -21,3 +21,6 @@ source ~/config/.zsh/git_prompt.zsh;
 
 export PS1='[%n@%m:%/] ';
 export _JAVA_AWT_WM_NONREPARENTING=1;
+
+## Prevent ctrl + S from locking my terminal.
+stty -ixon;
