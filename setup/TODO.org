@@ -68,3 +68,4 @@ feh
 .remmina
 redshift.conf -> .config/redshift.conf
 .davmail.properties
+applications -> .local/share/applications
