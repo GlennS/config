@@ -34,6 +34,10 @@ Auto install elpa packages
  + arandr
  + meld
 
+GTK themes to make Eclipse look better:
+ + gnome-themes-extras
+ + gtk2-engines-murrine
+
 ** Non-free
  + firmware-iwlwifi
  + firmware-realtek
