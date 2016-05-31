@@ -6,6 +6,7 @@
 	   json-mode
 	   web-mode
 	   nginx-mode
+	   pyvenv
 	   )
 	 )
   (package-install package-name))
