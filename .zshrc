@@ -24,3 +24,9 @@ export _JAVA_AWT_WM_NONREPARENTING=1;
 
 ## Prevent ctrl + S from locking my terminal.
 stty -ixon;
+
+## Include nix.
+source /home/glenn/.nix-profile/etc/profile.d/nix.sh;
+
+## A command remake which removes a file, and then defers to make.
+remake() { rm "$@"; make "$@" }
