@@ -2,5 +2,7 @@ xterm*faceName: DejaVu Sans Mono Book
 xterm*faceSize: 18
 xterm*savelines: 16384
 
-! Don't autoscroll as new lines come in.
+! Do not autoscroll as new lines come in.
 xterm*scrollTtyOutput: false
+
+xterm*metaSendsEscape: true

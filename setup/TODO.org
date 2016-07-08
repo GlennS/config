@@ -12,6 +12,7 @@ Auto install elpa packages
 
 * Missing aptitude installs
  + emacs
+ + emacs24-common-non-dfsg
  + i3
  + lightdm
  + chromium
@@ -32,6 +33,10 @@ Auto install elpa packages
  + keepass2
  + arandr
  + meld
+
+GTK themes to make Eclipse look better:
+ + gnome-themes-extras
+ + gtk2-engines-murrine
 
 ** Non-free
  + firmware-iwlwifi
@@ -67,3 +72,4 @@ feh
 .remmina
 redshift.conf -> .config/redshift.conf
 .davmail.properties
+applications -> .local/share/applications

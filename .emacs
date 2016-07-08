@@ -33,6 +33,7 @@
  '(org-latex-to-pdf-process
    (quote
     ("latexmk -pdflatex='xelatex --shell-escape -interaction nonstopmode -output-directory %o' -pdf -f %f")))
+ '(org-use-speed-commands t)
  '(package-archives
    (quote
     (("gnu" . "http://elpa.gnu.org/packages/")
@@ -40,9 +41,6 @@
  '(safe-local-variable-values (quote ((org-latex-listings . t))))
  '(tramp-default-method "ssh")
  '(vc-follow-symlinks nil))
-
-;; Disable _ to -> substitution in ESS.
-(ess-toggle-underscore nil)
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -115,6 +113,11 @@ It continues checking for javascript errors if there are no more PHP errors."
 
 ;;; JSON
 (add-hook 'json-mode 'flycheck-json-load)
+
+-;; Disable _ to -> substitution in ESS.
+(package-initialize)
+(require 'ess-site)
+(ess-toggle-underscore nil)
 
 (provide `.emacs)
 ;;; .emacs ends here
