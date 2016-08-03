@@ -118,6 +118,7 @@ It continues checking for javascript errors if there are no more PHP errors."
 (package-initialize)
 (require 'ess-site)
 (ess-toggle-underscore nil)
+(kill-buffer "*ESS*")
 
 (provide `.emacs)
 ;;; .emacs ends here
