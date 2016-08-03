@@ -114,7 +114,7 @@ It continues checking for javascript errors if there are no more PHP errors."
 ;;; JSON
 (add-hook 'json-mode 'flycheck-json-load)
 
--;; Disable _ to -> substitution in ESS.
+;; Disable _ to -> substitution in ESS.
 (package-initialize)
 (require 'ess-site)
 (ess-toggle-underscore nil)
