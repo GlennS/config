@@ -19,11 +19,12 @@
  '(ido-mode (quote both) nil (ido))
  '(ido-work-directory-list-ignore-regexps (quote ("^/home/glenn/S")))
  '(image-dired-external-viewer "/usr/bin/feh")
- '(initial-buffer-choice "~/work/todo.org")
  '(magit-push-always-verify nil)
- '(magit-revert-buffers t)
+ '(magit-revert-buffers t t)
  '(nxml-slash-auto-complete-flag t)
- '(org-agenda-files (quote ("~/work/todo.org")))
+ '(org-agenda-files
+   (quote
+    ("~/notes/todo.org" "~/notes/schedule.org" "~/work/events.org" "~/energy-calculator-update/plan.org" "~/chariot_model_sample/plan.org" "~/723-ssepd-communities-map/plan.org" "~/work/todo.org")))
  '(org-babel-load-languages (quote ((awk . t) (dot . t) (R . t))))
  '(org-confirm-babel-evaluate nil)
  '(org-export-backends (quote (ascii beamer html icalendar latex md texinfo)))
@@ -114,10 +115,11 @@ It continues checking for javascript errors if there are no more PHP errors."
 ;;; JSON
 (add-hook 'json-mode 'flycheck-json-load)
 
--;; Disable _ to -> substitution in ESS.
+;; Disable _ to -> substitution in ESS.
 (package-initialize)
 (require 'ess-site)
 (ess-toggle-underscore nil)
+(kill-buffer "*ESS*")
 
 (provide `.emacs)
 ;;; .emacs ends here
