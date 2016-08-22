@@ -121,5 +121,8 @@ It continues checking for javascript errors if there are no more PHP errors."
 (ess-toggle-underscore nil)
 (kill-buffer "*ESS*")
 
+;; PDF Tools
+(pdf-tools-install)
+
 (provide `.emacs)
 ;;; .emacs ends here
