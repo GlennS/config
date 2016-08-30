@@ -124,5 +124,10 @@ It continues checking for javascript errors if there are no more PHP errors."
 ;; PDF Tools
 (pdf-tools-install)
 
+;; Visual Regexp
+(require 'visual-regexp)
+(define-key global-map (kbd "C-c r") 'vr/replace) ; Replace all at once
+(define-key global-map (kbd "C-c q") 'vr/query-replace) ; Ask before each replacement
+
 (provide `.emacs)
 ;;; .emacs ends here
