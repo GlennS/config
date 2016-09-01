@@ -24,7 +24,7 @@
  '(nxml-slash-auto-complete-flag t)
  '(org-agenda-files
    (quote
-    ("~/notes/todo.org" "~/notes/schedule.org" "~/work/events.org" "~/energy-calculator-update/plan.org" "~/chariot_model_sample/plan.org" "~/723-ssepd-communities-map/plan.org" "~/work/todo.org")))
+    ("~/notes/reading.org" "~/notes/todo.org" "~/notes/schedule.org" "~/work/events.org" "~/energy-calculator-update/plan.org" "~/723-ssepd-communities-map/plan.org" "~/work/todo.org")))
  '(org-babel-load-languages (quote ((awk . t) (dot . t) (R . t))))
  '(org-confirm-babel-evaluate nil)
  '(org-export-backends (quote (ascii beamer html icalendar latex md texinfo)))
