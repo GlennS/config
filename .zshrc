@@ -30,3 +30,4 @@ source /home/glenn/.nix-profile/etc/profile.d/nix.sh;
 
 ## A command remake which removes a file, and then defers to make.
 remake() { rm "$@"; make "$@" }
+alias feh='feh --scale-down'
