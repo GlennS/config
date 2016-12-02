@@ -142,3 +142,7 @@ It continues checking for javascript errors if there are no more PHP errors."
 ;; Delete trailing whitespace when saving files
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 
+(define-key global-map (kbd "C-c m") 'magit-status)
+
+(provide `.emacs)
+;;; .emacs ends here
