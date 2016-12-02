@@ -10,6 +10,7 @@
  '(custom-safe-themes
    (quote
     ("19352d62ea0395879be564fc36bc0b4780d9768a964d26dfae8aad218062858d" default)))
+ '(dired-auto-revert-buffer (quote dired-directory-changed-p))
  '(display-time-24hr-format t)
  '(display-time-day-and-date t)
  '(display-time-mode t)
