@@ -132,3 +132,13 @@ It continues checking for javascript errors if there are no more PHP errors."
 
 (provide `.emacs)
 ;;; .emacs ends here
+;; Multiple Cursors
+(require 'multiple-cursors)
+(define-key global-map (kbd "C-S-SPC") 'mc/edit-lines)
+
+;; No Ctrl-z breaking things
+(define-key global-map (kbd "C-z") 'undo)
+
+;; Delete trailing whitespace when saving files
+(add-hook 'before-save-hook 'delete-trailing-whitespace)
+
