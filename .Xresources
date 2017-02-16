@@ -1,8 +1,38 @@
-xterm*faceName: DejaVu Sans Mono Book
-xterm*faceSize: 18
-xterm*savelines: 16384
+! Loaded on login
+! Reload with:
+! xrdb -merge $HOME/.Xresources
 
-! Do not autoscroll as new lines come in.
-xterm*scrollTtyOutput: false
+! URxvt options
 
-xterm*metaSendsEscape: true
+! See:
+! http://pod.tst.eu/http://cvs.schmorp.de/rxvt-unicode/doc/rxvt.1.pod#RESOURCES
+! http://pod.tst.eu/http://cvs.schmorp.de/rxvt-unicode/doc/rxvt.7.pod
+
+URxvt.urgentOnBell: True
+URxvt.visualBell: False
+
+URxvt.cursorBlink: True
+URxvt.saveLines: 16384
+
+! Scrolling behaviour
+URxvt.jumpScroll: False
+URxvt.skipScroll: False
+URxvt.scrollTtyOutput: True
+URxvt.scrollWithBuffer: False
+URxvt.scrollTtyKeypress: True
+
+! Scrollbar style
+URxvt.scrollstyle: plain
+URxvt.scrollBar_right: True
+
+! Fonts
+URxvt.font: xft:DejaVuSansMono:style=Book:antialias=true:size=20
+
+! Colours
+URxvt.background: #000000
+URxvt.foreground: gray90
+URxvt.color7: gray90
+URxvt.colorBD: #ffffff
+URxvt.cursorColor: #e0e080
+URxvt.throughColor: #8080f0
+URxvt.highlightColor: #f0f0f0

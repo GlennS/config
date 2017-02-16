@@ -144,9 +144,6 @@ bar {
 # No PC speaker beeps
 exec xset b off
 
-# 1920x1080 display-port monitor on left, laptop screen on right.
-exec /home/glenn/.screenlayout/setup-dual-monitors.sh
-
 # No capslock
 exec setxkbmap -option ctrl:nocaps
 
@@ -162,7 +159,8 @@ assign [class="emacs"] 1
 assign [class="Emacs"] 1
 assign [class="chromium-browser"] 2
 assign [class="KeePass2"] 3
-assign [class="UXTerm"] 3
+assign [class="urxvt"] 3
+assign [class="URxvt"] 3
 assign [class="Quasselclient"] 4
 assign [class="Eclipse"] 5
 assign [class="NHM IDE"] 6

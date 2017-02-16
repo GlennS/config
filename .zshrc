@@ -1,3 +1,5 @@
+source .profile
+
 # My custom function path
 fpath=(~/config/.zsh/functions $fpath)
 
@@ -15,19 +17,19 @@ autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 
-export EDITOR='emacsclient -a emacs';
-
 source ~/config/.zsh/git_prompt.zsh;
 
 export PS1='[%n@%m:%/] ';
-export _JAVA_AWT_WM_NONREPARENTING=1;
-
-## Prevent ctrl + S from locking my terminal.
-stty -ixon;
-
-## Include nix.
-source /home/glenn/.nix-profile/etc/profile.d/nix.sh;
 
 ## A command remake which removes a file, and then defers to make.
 remake() { rm "$@"; make "$@" }
 alias feh='feh --scale-down'
+alias ls='ls --color=auto'
+alias grep='grep --color=auto'
+
+## Keys
+## Don't work
+## May be Debian weirdness?
+# bindkey -e "^${terminfo[kcub1]}" backward-word
+# bindkey -e "^${terminfo[kcubf]}" forward-word
+# bindkey -e "^${terminfo[kdch1]}" kill-word
