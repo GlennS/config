@@ -8,6 +8,8 @@
 ! http://pod.tst.eu/http://cvs.schmorp.de/rxvt-unicode/doc/rxvt.1.pod#RESOURCES
 ! http://pod.tst.eu/http://cvs.schmorp.de/rxvt-unicode/doc/rxvt.7.pod
 
+URxvt.title: urxvt
+
 URxvt.urgentOnBell: True
 URxvt.visualBell: False
 
