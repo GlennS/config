@@ -35,6 +35,6 @@ URxvt.background: #000000
 URxvt.foreground: gray90
 URxvt.color7: gray90
 URxvt.colorBD: #ffffff
-URxvt.cursorColor: #e0e080
+URxvt.cursorColor: #22adb5
 URxvt.throughColor: #8080f0
 URxvt.highlightColor: #f0f0f0
