@@ -2,39 +2,34 @@
 ! Reload with:
 ! xrdb -merge $HOME/.Xresources
 
-! URxvt options
+xterm*title: urxvt
 
-! See:
-! http://pod.tst.eu/http://cvs.schmorp.de/rxvt-unicode/doc/rxvt.1.pod#RESOURCES
-! http://pod.tst.eu/http://cvs.schmorp.de/rxvt-unicode/doc/rxvt.7.pod
+xterm*urgentOnBell: True
+xterm*visualBell: False
 
-URxvt.title: urxvt
-
-URxvt.urgentOnBell: True
-URxvt.visualBell: False
-
-URxvt.cursorBlink: True
-URxvt.saveLines: 16384
+xterm*cursorBlink: True
+xterm*saveLines: 16384
 
 ! Scrolling behaviour
-URxvt.jumpScroll: False
-URxvt.skipScroll: False
-URxvt.scrollTtyOutput: True
-URxvt.scrollWithBuffer: False
-URxvt.scrollTtyKeypress: True
+xterm*jumpScroll: False
+xterm*skipScroll: False
+xterm*scrollTtyOutput: True
+xterm*scrollWithBuffer: False
+xterm*scrollTtyKeypress: True
 
 ! Scrollbar style
-URxvt.scrollstyle: plain
-URxvt.scrollBar_right: True
+xterm*scrollstyle: plain
+xterm*scrollBar_right: True
 
 ! Fonts
-URxvt.font: xft:DejaVuSansMono:style=Book:antialias=true:size=20
+xterm*faceName: DejaVu Sans Mono Book
+xterm*faceSize: 22
 
 ! Colours
-URxvt.background: #000000
-URxvt.foreground: gray90
-URxvt.color7: gray90
-URxvt.colorBD: #ffffff
-URxvt.cursorColor: #22adb5
-URxvt.throughColor: #8080f0
-URxvt.highlightColor: #f0f0f0
+xterm*background: #000000
+xterm*foreground: gray90
+xterm*color7: gray90
+xterm*colorBD: #ffffff
+xterm*cursorColor: #22adb5
+xterm*throughColor: #8080f0
+xterm*highlightColor: #f0f0f0
