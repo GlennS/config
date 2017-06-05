@@ -18,6 +18,7 @@ compinit
 # End of lines added by compinstall
 
 source ~/config/.zsh/git_prompt.zsh;
+source ~/config/.zsh/keys.zsh
 
 export PS1='[%n@%m:%/] ';
 
@@ -27,10 +28,3 @@ alias feh='feh --scale-down'
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 alias pullall="git -C ~/.ssh pull && git -C ~/work pull && git -C ~/notes pull && git -C ~/config pull"
-
-## Keys
-## Don't work
-## May be Debian weirdness?
-# bindkey -e "^${terminfo[kcub1]}" backward-word
-# bindkey -e "^${terminfo[kcubf]}" forward-word
-# bindkey -e "^${terminfo[kdch1]}" kill-word
