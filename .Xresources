@@ -33,3 +33,7 @@ xterm*colorBD: #ffffff
 xterm*cursorColor: #22adb5
 xterm*throughColor: #8080f0
 xterm*highlightColor: #f0f0f0
+
+! Alt-key behaviour
+xterm*eightBitInput: False
+xterm*metaSendsEscape: True
