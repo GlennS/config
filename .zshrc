@@ -1,3 +1,18 @@
+if [[ $TERM == "dumb" ]]; then
+    ## We're probably using Emacs Tramp
+    unsetopt zle
+    unsetopt prompt_cr
+    unsetopt prompt_subst
+    if whence -w precmd >/dev/null; then
+	unfunction precmd
+    fi
+    if whence -w preexec >/dev/null; then
+	unfunction preexec
+    fi
+    PS1='> '
+    return
+fi
+
 source .profile
 
 # My custom function path
