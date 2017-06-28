@@ -51,6 +51,9 @@
  ;; If there is more than one, they won't work right.
  )
 
+(setq org-todo-keywords
+       '((sequence "TODO" "BLOCKED" "|" "DONE")))
+
 ;; Change M-x <space> to toggle between ' ', '' and '\t'.
 (substitute-key-definition
  'just-one-space
