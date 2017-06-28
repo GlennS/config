@@ -123,7 +123,7 @@
 ;; Delete trailing whitespace when saving files
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 
-(define-key global-map (kbd "C-c m") 'magit-status)
+(define-key global-map (kbd "C-c g") 'magit-status)
 
 (provide `.emacs)
 ;;; .emacs ends here
