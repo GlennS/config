@@ -127,3 +127,6 @@
 
 (provide `.emacs)
 ;;; .emacs ends here
+;; Default to indenting with spaces
+(setq-default indent-tabs-mode nil)
+
