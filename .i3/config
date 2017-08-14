@@ -157,8 +157,8 @@ workspace 4 output "DP1"
 
 assign [class="emacs"] 1
 assign [class="Emacs"] 1
-assign [class="chromium-browser"] 2
-assign [class="Chromium-browser"] 2
+assign [class="Navigator"] 2
+assign [class="Firefox-esr"] 2
 assign [class="KeePass2"] 3
 assign [class="urxvt"] 3
 assign [class="URxvt"] 3
@@ -169,7 +169,7 @@ assign [class="NHM IDE"] 6
 for_window [class="Eclipse" title="Compare .*"] fullscreen;
 
 exec emacs;
-exec chromium;
+exec firefox;
 # Add my ssh key
 exec i3-msg 'workspace 3; exec /usr/bin/i3-sensible-terminal -e "/usr/bin/ssh-add /home/glenn/.ssh/versioncontrol.private.openssh"'
 exec i3-msg 'workspace 3; exec /usr/bin/i3-sensible-terminal'
