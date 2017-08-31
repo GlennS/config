@@ -43,3 +43,6 @@ alias feh='feh --scale-down'
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 alias pullall="git -C ~/.ssh pull && git -C ~/work pull && git -C ~/notes pull && git -C ~/config pull"
+
+# Direnv
+eval "$(direnv hook zsh)"
