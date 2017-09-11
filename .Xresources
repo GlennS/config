@@ -2,8 +2,6 @@
 ! Reload with:
 ! xrdb -merge $HOME/.Xresources
 
-xterm*title: urxvt
-
 xterm*urgentOnBell: True
 xterm*visualBell: False
 
