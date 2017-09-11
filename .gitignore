@@ -1,2 +1,19 @@
-## Don't include Remmina preferences since they contain a 'secret'.
-.remmina/remmina.pref
+*
+
+!/.gitignore
+
+!/.gitconfig
+!/feh/buttons
+!/.emacs
+!/.emacs.d/*
+!/.i3/config
+!/.i3/status.conf
+!/.profile
+!/.quassel/quasselclient.conf
+!/.quassel/settings.qss
+!/.remmina/1446556920327.remmina
+!/.xsessionrc
+!/.Xmodmap
+!/.Xresources
+!/.zsh/*
+!/.zshrc
