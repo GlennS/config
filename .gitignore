@@ -3,17 +3,15 @@
 !/.gitignore
 
 !/.gitconfig
-!/feh/buttons
+!/feh
 !/.emacs
-!/.emacs.d/*
-!/.i3/config
-!/.i3/status.conf
+!/.emacs.d
+!/.i3
 !/.profile
-!/.quassel/quasselclient.conf
-!/.quassel/settings.qss
-!/.remmina/1446556920327.remmina
+!/.quassel
+!/.remmina
 !/.xsessionrc
 !/.Xmodmap
 !/.Xresources
-!/.zsh/*
+!/.zsh
 !/.zshrc
