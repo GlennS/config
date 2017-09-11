@@ -3,13 +3,20 @@
 !/.gitignore
 
 !/.gitconfig
+
+!/applications
+!/applications/*
 !/feh
 !/.emacs
 !/.emacs.d
+!/.emacs.d/*
 !/.i3
+!/redshift.conf
 !/.profile
 !/.quassel
 !/.remmina
+!/screenLayout
+!/screenLayout/*
 !/.xsessionrc
 !/.Xmodmap
 !/.Xresources
