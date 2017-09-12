@@ -9,7 +9,8 @@
 !/feh
 !/.emacs
 !/.emacs.d
-!/.emacs.d/*
+!/.emacs.d/config
+!/.emacs.d/config/*
 !/.i3
 !/redshift.conf
 !/.profile
