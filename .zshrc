@@ -16,7 +16,7 @@ fi
 source .profile
 
 # My custom function path
-fpath=(~/config/.zsh/functions $fpath)
+fpath=(~/.zsh/functions $fpath)
 
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
@@ -32,8 +32,8 @@ autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 
-source ~/config/.zsh/git_prompt.zsh;
-source ~/config/.zsh/keys.zsh
+source ~/.zsh/git_prompt.zsh;
+source ~/.zsh/keys.zsh
 
 export PS1='[%n@%m:%/] ';
 
@@ -42,7 +42,7 @@ remake() { rm "$@"; make "$@" }
 alias feh='feh --scale-down'
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
-alias pullall="git -C ~/.ssh pull && git -C ~/work pull && git -C ~/notes pull && git -C ~/config pull"
+alias pullall="git -C ~/.ssh pull && git -C ~/work pull && git -C ~/notes pull && config pull"
 alias config='git --git-dir=$HOME/config.git/ --work-tree=$HOME'
 
 # Direnv
