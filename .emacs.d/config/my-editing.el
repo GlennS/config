@@ -34,4 +34,7 @@
 (with-eval-after-load 'org
   (define-key org-mode-map (kbd "C-c SPC") nil))
 
+(prefer-coding-system 'utf-8-unix)
+(setq-default buffer-file-coding-system 'utf-8-unix)
+
 (provide `my-editing)
