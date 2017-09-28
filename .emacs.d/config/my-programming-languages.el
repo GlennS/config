@@ -18,6 +18,10 @@
 (add-to-list 'auto-mode-alist '("\\.php$" . web-mode))
 (add-hook 'clojure-mode-hook #'cider-mode)
 
+;; Auto-complete for Clojure
+(add-hook 'cider-repl-mode-hook #'company-mode)
+(add-hook 'cider-mode-hook #'company-mode)
+
 (setq cider-cljs-lein-repl ; Make ClojureScript + Figwheel + Cider work
       "(do (use 'figwheel-sidecar.repl-api) (start-figwheel!) (cljs-repl))")
 
