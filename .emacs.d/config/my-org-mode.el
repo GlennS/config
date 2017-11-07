@@ -23,4 +23,6 @@
 
 (global-set-key (kbd "C-c a") 'org-agenda)
 
+(add-hook 'org-mode-hook #'writegood-mode)
+
 (provide `my-org-mode)
