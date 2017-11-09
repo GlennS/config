@@ -4,7 +4,7 @@
 
       (project-agenda-files '("~/137-wpd-smart-and-snug/readme.org"
                               "~/630-openlv/readme.org"
-                              "~/wpd-vulnerability-map/readme.org"))
+                              "~/385-wpd-vulnerability-map/readme.org"))
 
       (work-agenda-files '("~/work/todo.org"
                            "~/work/events.org")))
