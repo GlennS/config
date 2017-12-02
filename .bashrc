@@ -5,5 +5,5 @@ if [[ $(pgrep ssh-agent) = "" ]]; then
     ssh-add ~/.ssh/versioncontrol.private.openssh
 fi
 
-alias pullall="git -C ~/.ssh pull && git -C ~/work pull && git -C ~/notes pull && git -C ~/config pull"
 alias config="git --git-dir=$HOME/config.git/ --work-tree=$HOME"
+alias pullall="git -C ~/.ssh pull && git -C ~/work pull && git -C ~/notes pull && config pull"

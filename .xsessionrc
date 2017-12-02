@@ -1,3 +1,1 @@
-~/screenlayout/setup-dual-monitors.sh
-
 export PATH="$HOME/bin:$HOME/.nix-profile/bin:$PATH"
