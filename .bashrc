@@ -1,4 +1,4 @@
-[ -z "$PS1" ] && return
+[ -z "$PS1" ] && exit
 
 if [[ $(pgrep ssh-agent) = "" ]]; then
     eval `ssh-agent -s`
