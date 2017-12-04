@@ -2,9 +2,7 @@
                             "~/notes/reading.org"
                             "~/notes/schedule.org"))
 
-      (project-agenda-files '("~/137-wpd-smart-and-snug/readme.org"
-                              "~/630-openlv/readme.org"
-                              "~/385-wpd-vulnerability-map/readme.org"))
+      (project-agenda-files '())
 
       (work-agenda-files '("~/work/todo.org"
                            "~/work/events.org")))
@@ -13,9 +11,8 @@
         (if (string= system-name "glenn-laptop")
 
             (append
-             home-agenda-files
-             project-agenda-files
-             work-agenda-files)
+             work-agenda-files
+             project-agenda-files)
 
           home-agenda-files)))
 
