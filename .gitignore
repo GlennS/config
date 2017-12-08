@@ -12,6 +12,7 @@
 !/.emacs.d/config
 !/.emacs.d/config/*
 !/.i3
+!/.i3/*
 !/redshift.conf
 !/.profile
 !/.quassel

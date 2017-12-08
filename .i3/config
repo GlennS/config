@@ -15,7 +15,7 @@ bindsym Insert exec "echo '';"
 focus_follows_mouse no
 
 # Lock the screen and turn it off.
-bindsym $mod+l exec i3lock --dpms --inactivity-timeout 5
+bindsym $mod+l exec /home/glenn/.i3/i3lock-with-dpms.sh
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -165,7 +165,7 @@ assign [class="urxvt"] 3
 assign [class="URxvt"] 3
 assign [class="Quasselclient"] 4
 assign [class="Eclipse"] 5
-assign [class="NHM IDE"] 6
+# assign [class="NHM IDE"] 6
 
 for_window [class="Eclipse" title="Compare .*"] fullscreen;
 
