@@ -1,8 +1,9 @@
 [ -z "$PS1" ] && exit
 
-if [[ $(pgrep ssh-agent) = "" ]]; then
+if [[ $(uname -s) = "MINGW64_NT-10.0" ]]; then
     eval `ssh-agent -s`
     ssh-add ~/.ssh/versioncontrol.private.openssh
+	alias emacs="HOME='C:/Users/Glenn' 'C:/Program Files/emacs/bin/runemacs'"
 fi
 
 alias config="git --git-dir=$HOME/config.git/ --work-tree=$HOME"
