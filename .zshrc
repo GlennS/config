@@ -44,6 +44,7 @@ alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 alias pullall="git -C ~/.ssh pull && git -C ~/work pull && git -C ~/notes pull && config pull"
 alias config='git --git-dir=$HOME/config.git/ --work-tree=$HOME'
+alias spatialite='rlwrap spatialite'
 
 # Direnv
 eval "$(direnv hook zsh)"
