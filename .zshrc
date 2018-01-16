@@ -35,7 +35,7 @@ compinit
 source ~/.zsh/git_prompt.zsh;
 source ~/.zsh/keys.zsh
 
-export PS1='[%n@%m:%/] ';
+export PS1="%{$fg[cyan]%}[%n@%m:%/] %{$reset_color%}";
 
 ## A command remake which removes a file, and then defers to make.
 remake() { rm "$@"; make "$@" }
