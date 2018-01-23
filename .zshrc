@@ -18,6 +18,9 @@ source .profile
 # My custom function path
 fpath=(~/.zsh/functions $fpath)
 
+source $HOME/nix-zsh-completions/nix.plugin.zsh
+fpath=($HOME/nix-zsh-completions $fpath)
+
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
 HISTSIZE=1000
