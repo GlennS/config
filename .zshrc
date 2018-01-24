@@ -15,11 +15,10 @@ fi
 
 source .profile
 
-# My custom function path
-fpath=(~/.zsh/functions $fpath)
-
 source $HOME/nix-zsh-completions/nix.plugin.zsh
-fpath=($HOME/nix-zsh-completions $fpath)
+
+# My custom function path
+fpath=(~/.zsh/functions $HOME/nix-zsh-completions $HOME/.nix-profile/share/zsh/site-functions $fpath)
 
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
