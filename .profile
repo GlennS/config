@@ -1,6 +1,7 @@
 export PATH="$HOME/bin:$HOME/.nix-profile/bin:$PATH"
 export NIX_SSL_CERT_FILE=/etc/ssl/certs/ca-certificates.crt
-export NIX_PATH=nixpkgs=$HOME/.nix-defexpr/channels/nixpkgs
+export NIX_CHANNELS="$HOME/.nix-defexpr/channels"
+export NIX_PATH="nixos-17.09=$NIX_CHANNELS/nixos-17.09"
 export NIX_LINK=$HOME/.nix-profile
 export EDITOR='emacsclient -a emacs'
 export GTK_THEME=Albatross
