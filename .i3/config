@@ -32,6 +32,8 @@ bindsym $mod+d exec dmenu_run -i -f -fn "Droid Sans Mono-20"
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
+#
+# I decided against this.
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
 # Change focus using cursor keys
@@ -49,12 +51,6 @@ bindsym $mod+Shift+Right move right
 bindsym $mod+Shift+less move workspace to output left
 bindsym $mod+Shift+greater move workspace to output right
 
-# split in horizontal orientation
-bindsym $mod+h split h
-
-# split in vertical orientation
-bindsym $mod+v split v
-
 # enter fullscreen mode for the focused container
 bindsym $mod+Return fullscreen
 
@@ -68,12 +64,6 @@ bindsym $mod+Shift+space floating toggle
 
 # change focus between tiling / floating windows
 bindsym $mod+space focus mode_toggle
-
-# focus the parent container
-bindsym $mod+a focus parent
-
-# focus the child container
-#bindsym $mod+d focus child
 
 # switch to workspace
 bindsym $mod+1 workspace 1
@@ -151,32 +141,29 @@ exec setxkbmap -option ctrl:nocaps
 # Launch some applications in particular places.
 workspace_layout tabbed
 
-workspace 1 output "DP-1"
-workspace 2 output "DP-1"
-workspace 3 output "eDP-1"
-workspace 4 output "DP-1"
-
 assign [class="emacs"] 1
 assign [class="Emacs"] 1
-assign [class="Navigator"] 2
-assign [class="Firefox-esr"] 2
-assign [class="KeePass2"] 3
-assign [class="urxvt"] 3
-assign [class="URxvt"] 3
-assign [class="Quasselclient"] 4
-assign [class="Eclipse"] 5
-# assign [class="NHM IDE"] 6
 
-for_window [class="Eclipse" title="Compare .*"] fullscreen;
+assign [class="Navigator"] 2
+assign [class="Firefox"] 2
+assign [class="Firefox-esr"] 2
+
+assign [class="KeePass2"] 3
+
+assign [class="xterm"] 3
+assign [class="UXterm"] 3
+
+assign [class="Quasselclient"] 4
 
 exec emacs;
 exec firefox;
+
+exec i3-msg "workspace 3"
+
 # Add my ssh key
-exec i3-msg 'workspace 3; exec /usr/bin/i3-sensible-terminal -e "/usr/bin/ssh-add /home/glenn/.ssh/versioncontrol.private.openssh"'
-exec i3-msg 'workspace 3; exec /usr/bin/i3-sensible-terminal'
-## exec keepass2;
-## exec quasselclient --configdir="~/.quassel";
+exec uxterm
+exec uxterm -e "ssh-add ~/.ssh/versioncontrol.private.openssh"
+
 exec --no-startup-id nm-applet;
 exec --no-startup-id pasystray;
 exec --no-startup-id redshift;
-exec --no-startup-id davmail;
