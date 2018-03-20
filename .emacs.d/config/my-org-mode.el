@@ -1,5 +1,5 @@
 (setq org-todo-keywords
-      '((sequence "TODO" "BLOCKED" "|" "DONE")))
+      '((sequence "TODO" "IN-PROGRESS" "|" "BLOCKED" "|" "DONE")))
 
 (setq org-babel-load-languages
       (quote ((awk . t)
