@@ -25,4 +25,8 @@
 
 (add-hook 'org-mode-hook #'writegood-mode)
 
+(setq TeX-engine 'xetex)
+
+(setq org-latex-pdf-process '("xelatex --shell-escape -interaction nonstopmode -output-directory %o %f"))
+
 (provide `my-org-mode)
