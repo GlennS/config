@@ -4,7 +4,8 @@
 (setq org-babel-load-languages
       (quote ((awk . t)
               (dot . t)
-              (R . t))))
+              (R . t)
+              (python . t))))
 
 (setq org-confirm-babel-evaluate nil)
 
