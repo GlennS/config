@@ -18,16 +18,16 @@
               md
               texinfo)))
 
-(setq org-latex-pdf-process
-      (quote
-       ("latexmk -pdflatex='xelatex --shell-escape -interaction nonstopmode -output-directory %o' -pdf -f %f")))
-
 (global-set-key (kbd "C-c a") 'org-agenda)
 
 (add-hook 'org-mode-hook #'writegood-mode)
 
+;; org-mode latex export using XeLaTeX
 (setq TeX-engine 'xetex)
-
 (setq org-latex-pdf-process '("xelatex --shell-escape -interaction nonstopmode -output-directory %o %f"))
+
+;; Some sensible latex defaults for org-mode export
+(setq org-latex-packages-alist '(("" "parskip" nil)
+                                 ("margin=2cm" "geometry" nil)))
 
 (provide `my-org-mode)
