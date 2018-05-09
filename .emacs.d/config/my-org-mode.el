@@ -5,7 +5,11 @@
       (quote ((awk . t)
               (dot . t)
               (R . t)
-              (python . t))))
+              (python . t)
+              (ruby . t)
+              (js . t)
+              (ipython . t)
+              )))
 
 (setq org-confirm-babel-evaluate nil)
 
@@ -20,7 +24,8 @@
 
 (global-set-key (kbd "C-c a") 'org-agenda)
 
-(add-hook 'org-mode-hook #'writegood-mode)
+;; Use js2-mode instead of js-mode for JavaScript.
+(add-hook `org-mode-hook (lambda () (add-to-list `org-src-lang-modes `("js" . js2))))
 
 ;; org-mode latex export using XeLaTeX
 (setq TeX-engine 'xetex)
@@ -29,5 +34,7 @@
 ;; Some sensible latex defaults for org-mode export
 (setq org-latex-packages-alist '(("" "parskip" nil)
                                  ("margin=2cm" "geometry" nil)))
+
+(setq python-shell-interpreter "python3")
 
 (provide `my-org-mode)
