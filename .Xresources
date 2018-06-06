@@ -26,11 +26,9 @@ xterm*faceSize: 22
 ! Colours
 xterm*background: #000000
 xterm*foreground: gray90
-xterm*color7: gray90
-xterm*colorBD: #ffffff
 xterm*cursorColor: #22adb5
-xterm*throughColor: #8080f0
-xterm*highlightColor: #f0f0f0
+xterm*highlightColor: #004499
+xterm*highlightTextColor: #00dd66
 
 ! Alt-key behaviour
 xterm*eightBitInput: False
