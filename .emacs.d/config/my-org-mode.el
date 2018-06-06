@@ -24,8 +24,8 @@
 
 (global-set-key (kbd "C-c a") 'org-agenda)
 
-;; Use js2-mode instead of js-mode for JavaScript.
-(add-hook `org-mode-hook (lambda () (add-to-list `org-src-lang-modes `("js" . js2))))
+;; Use rjsx instead of js-mode for JavaScript.
+(add-hook `org-mode-hook (lambda () (add-to-list `org-src-lang-modes `("js" . rjsx))))
 
 ;; org-mode latex export using XeLaTeX
 (setq TeX-engine 'xetex)
