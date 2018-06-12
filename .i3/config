@@ -140,9 +140,14 @@ bindsym $mod+r mode "resize"
 bar {
 	status_command i3status --config ~/.i3/status.conf
 	position top
-	# These lines error in 4.8
-	# bindsym button4 nop "Disable scrollwheel in bar"
-	# bindsym button5 nop "Disable scrollwheel in bar"
+
+        # These lines are deprecated, and should be replaced.
+        wheel_down_cmd nop
+        wheel_up_cmd nop
+
+	# These lines error until 4.8
+	# bindsym button4 nop # Disable scrollwheel in bar
+	# bindsym button5 nop # Disable scrollwheel in bar
 }
 
 # No PC speaker beeps
