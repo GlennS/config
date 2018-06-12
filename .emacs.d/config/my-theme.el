@@ -7,6 +7,6 @@
 (tool-bar-mode -1)
 
 (setq split-height-threshold nil) ;; Never split top-and-bottom
-(setq split-width-threshold 80) ;; Split left-and-right eagely.
+(setq split-width-threshold 160) ;; Split left-and-right at the normal rate.
 
 (provide `my-theme)
