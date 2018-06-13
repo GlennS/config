@@ -1,7 +1,4 @@
-(setq org-agenda-files '("~/notes/todo.org"
-                        "~/notes/reading.org"
-                        "~/notes/schedule.org"
-                        "~/work/todo.org"
-                        "~/work/events.org"))
+(setq org-agenda-files '("~/goscript/tasks.org"
+                         "~/goscript/schedule.org"))
 
 (provide `my-org-agenda-files)
