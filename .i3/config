@@ -171,10 +171,12 @@ assign [class="KeePass2"] 3
 assign [class="xterm"] 3
 assign [class="UXterm"] 3
 
+assign [class="Slack"] 4
 assign [class="Quasselclient"] 4
 
 exec emacs;
 exec firefox;
+exec slack;
 
 exec i3-msg "workspace 3"
 
