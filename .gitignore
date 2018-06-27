@@ -7,6 +7,7 @@
 !/applications
 !/applications/*
 !/feh
+!/feh/*
 !/.emacs
 !/.emacs.d
 !/.emacs.d/config
@@ -26,3 +27,7 @@
 !/.zshrc
 !/.bashrc
 !/.bash_profile
+
+!/.config
+!/.config/nixpkgs
+!/.config/nixpkgs/*
