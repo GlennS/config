@@ -1,5 +1,7 @@
 ;;; JavaScript
 (setq js-indent-level 2)
+(setq js-expr-indent-offset 4)
+
 
 ;; Don't add newlines when writing JavaScript
 (add-hook 'js-mode-hook
