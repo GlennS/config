@@ -11,6 +11,7 @@
 (require 'my-backups)
 (require 'my-org-agenda-files)
 (require 'my-org-mode)
+(require 'my-markdown)
 (require 'my-programs)
 (require 'my-theme)
 (require 'my-editing)
