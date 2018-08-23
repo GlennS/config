@@ -29,6 +29,7 @@
 (add-to-list 'auto-mode-alist '("\\.nhm$" . nhm-mode))
 (add-to-list 'auto-mode-alist '("\\.js$" . rjsx-mode))
 (add-to-list 'auto-mode-alist '("\\.jsx$" . rjsx-mode))
+(add-to-list 'auto-mode-alist '("\\.html$" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.php$" . web-mode))
 (add-hook 'clojure-mode-hook #'cider-mode)
 
