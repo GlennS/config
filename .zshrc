@@ -44,7 +44,7 @@ remake() { rm "$@"; make "$@" }
 alias feh='feh --scale-down'
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
-alias pullall='for repo in ".ssh" "cammy" "goscript" "notes"; do git -C "${repo}" pull; done; config pull'
+alias pullall='for repo in ".ssh" "cammy" "notes"; do git -C "${repo}" pull; done; config pull'
 alias config='git --git-dir=$HOME/config.git/ --work-tree=$HOME'
 alias spatialite='rlwrap spatialite'
 alias sqlite3='rlwrap sqlite3'
