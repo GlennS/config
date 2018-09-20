@@ -1,6 +1,7 @@
 {
   allowUnfree = true;
 
+  ## To install things from here, write something like: nix-env -iA 'nixos1803.myEmacs'
   packageOverrides = super: let self = super.pkgs; in
   {
     rEnv = super.rWrapper.override {
@@ -25,9 +26,7 @@
       php-mode
       go-mode
       groovy-mode
-
       ## ruby-mode # built in
-
       csharp-mode
       ess # R
       company # R
@@ -39,6 +38,7 @@
       cider # Clojure
       gradle-mode # Java
       markdown-mode
+      ## sql-indent This is obsolete?
 
       htmlize # Syntax highlighting for HTML export
 

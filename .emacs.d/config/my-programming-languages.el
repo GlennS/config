@@ -41,5 +41,9 @@
 (setq cider-cljs-lein-repl ; Make ClojureScript + Figwheel + Cider work
       "(do (use 'figwheel-sidecar.repl-api) (start-figwheel!) (cljs-repl))")
 
+;;; SQL
+;; https://github.com/alex-hhh/emacs-sql-indent
+(add-hook 'sql-mode-hook 'sqlind-minor-mode)
+
 ;;; Finish
 (provide `my-programming-languages)
