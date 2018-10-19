@@ -1,7 +1,7 @@
 {
   allowUnfree = true;
 
-  ## To install things from here, write something like: nix-env -iA 'nixos1803.myEmacs'
+  ## To install things from here, write something like: nix-env -iA 'nixos1809.myEmacs'
   packageOverrides = super: let self = super.pkgs; in
   {
     rEnv = super.rWrapper.override {
