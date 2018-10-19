@@ -21,7 +21,6 @@
       web-mode
       js2-mode
       rjsx-mode # js2 + JSX for React
-      less-css-mode
       json-mode
       php-mode
       go-mode
