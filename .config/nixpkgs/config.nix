@@ -11,11 +11,10 @@
       ];
     };
 
-    myPython3 = super.pkgs.python36.withPackages(ps: with ps; [matplotlib tabulate numpy jupyter]);
-    myPython2 = super.pkgs.python27.withPackages(ps: with ps; [matplotlib tabulate numpy jupyter]);
-
     myEmacs = super.pkgs.emacsWithPackages (epkgs: (with epkgs.melpaPackages; [
       magit
+
+      direnv
 
       basic-mode
       web-mode
