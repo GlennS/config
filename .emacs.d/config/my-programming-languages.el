@@ -28,5 +28,12 @@
 ;; https://github.com/alex-hhh/emacs-sql-indent
 (add-hook 'sql-mode-hook 'sqlind-minor-mode)
 
+;;; Python
+;; Use flymake
+(add-hook 'python-mode-hook '(lambda () (flymake-mode)))
+
+;;; Latex
+(add-hook 'latex-mode-hook '(lambda () (flymake-mode)))
+
 ;;; Finish
 (provide `my-programming-languages)
