@@ -35,5 +35,8 @@
 ;;; Latex
 (add-hook 'latex-mode-hook '(lambda () (flymake-mode)))
 
+;;; Nix
+(setq nix-indent-function (quote nix-indent-line))
+
 ;;; Finish
 (provide `my-programming-languages)
