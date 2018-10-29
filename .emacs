@@ -1,28 +1,23 @@
+;;; .emacs
 
-;; Added by Package.el.  This must come before configurations of
-;; installed packages.  Don't delete this line.  If you don't want it,
-;; just comment it out by adding a semicolon to the start of the line.
-;; You may delete these explanatory comments.
+;; Load all our installed packages right now.
+(setq package-enable-at-startup nil)
 (package-initialize)
 
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(ido-auto-merge-delay-time 3)
- '(ido-mode (quote both) nil (ido))
- '(package-archives
-   (quote
-    (("gnu" . "http://elpa.gnu.org/packages/")
-     ("melpa" . "http://melpa.milkbox.net/packages/"))))
- '(package-enable-at-startup nil)
- '(tramp-default-method "ssh"))
+;; We don't want our customizations saved, thanks.
+(setq custom-file "/dev/null")
+;;(load custom-file)
+
+(setq package-archives
+      (quote
+       (("gnu" . "http://elpa.gnu.org/packages/")
+        ("melpa" . "http://melpa.milkbox.net/packages/"))))
 
 (add-to-list 'load-path
              (expand-file-name "config" user-emacs-directory))
 
 (require 'my-backups)
+(require 'my-file-find)
 (require 'my-org-agenda-files)
 (require 'my-org-mode)
 (require 'my-markdown)
