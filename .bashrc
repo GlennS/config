@@ -3,8 +3,11 @@
 if [[ $(uname -s) = "MINGW64_NT-10.0" ]]; then
     eval `ssh-agent -s`
     ssh-add ~/.ssh/versioncontrol.private.openssh
-	alias emacs="HOME='C:/Users/Glenn' 'C:/Program Files/emacs/bin/runemacs'"
+    alias emacs="HOME='$env:HOME' 'C:/Program Files/emacs/bin/runemacs'"
+
+    cd ~
 fi
 
 alias config="git --git-dir=$HOME/config.git/ --work-tree=$HOME"
-alias pullall="git -C ~/.ssh pull && git -C ~/work pull && git -C ~/notes pull && config pull"
+alias pullall='for repo in ".ssh" "cammy" "notes"; do git -C "${HOME}/${repo}" pull; done; config pull'
+alias sqlite_cammy="sqlite3 $env:CAMMY_DB"
