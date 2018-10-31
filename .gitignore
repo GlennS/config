@@ -26,6 +26,7 @@
 !/.zsh
 !/.zshrc
 !/.bashrc
+!/set-windows-env.sh
 !/.bash_profile
 
 !/.config

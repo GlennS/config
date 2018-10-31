@@ -4,6 +4,7 @@ if [[ $(uname -s) = "MINGW64_NT-10.0" ]]; then
     eval `ssh-agent -s`
     ssh-add ~/.ssh/versioncontrol.private.openssh
     alias emacs="HOME='$env:HOME' 'C:/Program Files/emacs/bin/runemacs'"
+    ~/set-windows-env.sh
 
     cd ~
 fi
