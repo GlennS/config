@@ -28,6 +28,7 @@
 !/.bashrc
 !/set-windows-env.sh
 !/.bash_profile
+!/.direnvrc
 
 !/.config
 !/.config/nixpkgs
