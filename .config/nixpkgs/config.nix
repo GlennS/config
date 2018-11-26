@@ -29,6 +29,7 @@
         ess # R
         company # R
         python-mode
+        blacken # Python formatting
         ob-ipython
         nginx-mode
         ## nix-mode # Out of date
