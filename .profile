@@ -1,4 +1,4 @@
-export PATH="$HOME/bin:$HOME/.nix-profile/bin:$PATH"
+export PATH="$HOME/bin:$HOME/.nix-profile/bin:$PATH:$HOME/.local/bin"
 export NIX_SSL_CERT_FILE=/etc/ssl/certs/ca-certificates.crt
 export NIX_CHANNELS="$HOME/.nix-defexpr/channels"
 
