@@ -1,7 +1,7 @@
 ## From https://github.com/direnv/direnv/wiki/Nix#speeding-things-up
 ## TODO: update this when we start using a newer version of direnv.
 use_nix() {
-  local cache=".direnv.$(nixos-version --hash)"
+  local cache=".direnv/cache-$(nixos-version --hash)"
   if [[ ! -e "$cache" ]] || \
      [[ "$HOME/.direnvrc" -nt "$cache" ]] || \
      [[ ".envrc" -nt "$cache" ]] || \
@@ -10,8 +10,7 @@ use_nix() {
   then
     local tmp="$(mktemp "${cache}.tmp-XXXXXXXX")"
     trap "rm -rf '$tmp'" EXIT
-    nix-shell --show-trace "$@" --run 'direnv dump' > "$tmp" && \
-      mv "$tmp" "$cache"
+    nix-shell --show-trace "$@" --run 'direnv dump' > "$tmp" && mv "$tmp" "$cache"
   fi
 
   local term_backup=$TERM
