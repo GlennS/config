@@ -34,10 +34,24 @@ autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 
-source ~/.zsh/git_prompt.zsh;
 source ~/.zsh/keys.zsh
 
-export PS1="%{$fg[cyan]%}[%n@%m:%/] %{$reset_color%}";
+setopt prompt_subst
+autoload -U colors && colors # Enable colors in prompt
+##export PS1="%{$fg[cyan]%}[%n@%m:%/] %{$reset_color%}";
+
+autoload -Uz vcs_info
+zstyle ':vsc_info:*' enable git
+
+zstyle ':vcs_info:*' actionformats '%F{5}%F{2}%b%F{3}|%F{1}%a%F{5}%f'
+zstyle ':vcs_info:*' formats       '%F{5}%F{2}%b%F{5}%f'
+
+zstyle ':vcs_info:(sv[nk]|bzr):*' branchformat '%b%F{1}:%F{3}%r'
+
+precmd () { vcs_info }
+export PS1='%F{5}%F{2}%n%F{5}:%F{3}%3~ > %f'
+export RPS1='${vcs_info_msg_0_}'
+
 
 ## A command remake which removes a file, and then defers to make.
 remake() { rm "$@"; make "$@" }
