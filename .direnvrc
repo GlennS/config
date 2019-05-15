@@ -1,24 +1,25 @@
 ## From https://github.com/direnv/direnv/wiki/Nix#speeding-things-up
 ## TODO: update this when we start using a newer version of direnv.
 use_nix() {
-  local cache=".direnv/cache-$(nixos-version --hash)"
-  if [[ ! -e "$cache" ]] || \
-     [[ "$HOME/.direnvrc" -nt "$cache" ]] || \
-     [[ ".envrc" -nt "$cache" ]] || \
-     [[ "default.nix" -nt "$cache" ]] || \
-     [[ "shell.nix" -nt "$cache" ]];
-  then
-    local tmp="$(mktemp "${cache}.tmp-XXXXXXXX")"
-    trap "rm -rf '$tmp'" EXIT
-    nix-shell --show-trace "$@" --run 'direnv dump' > "$tmp" && mv "$tmp" "$cache"
-  fi
+    local cache=".direnv/cache-$(nixos-version --hash)"
+    if [[ ! -e "$cache" ]] || \
+           [[ "$HOME/.direnvrc" -nt "$cache" ]] || \
+           [[ ".envrc" -nt "$cache" ]] || \
+           [[ "default.nix" -nt "$cache" ]] || \
+           [[ "shell.nix" -nt "$cache" ]];
+    then
+        [ -d .direnv ] || mkdir .direnv
+        local tmp="$(mktemp "${cache}.tmp-XXXXXXXX")"
+        trap "rm -rf '$tmp'" EXIT
+        nix-shell --show-trace "$@" --run 'direnv dump' > "$tmp" && mv "$tmp" "$cache"
+    fi
 
-  local term_backup=$TERM
-  direnv_load cat "$cache"
-  export TERM=$term_backup
+    local term_backup=$TERM
+    direnv_load cat "$cache"
+    export TERM=$term_backup
 
-  if [[ $# = 0 ]]; then
-    watch_file default.nix
-    watch_file shell.nix
-  fi
+    if [[ $# = 0 ]]; then
+        watch_file default.nix
+        watch_file shell.nix
+    fi
 }
