@@ -1,5 +1,4 @@
-## From https://github.com/direnv/direnv/wiki/Nix#speeding-things-up
-## TODO: update this when we start using a newer version of direnv.
+## Based on https://github.com/direnv/direnv/wiki/Nix#speeding-things-up
 use_nix() {
     local cache=".direnv/cache-$(nixos-version --hash)"
     if [[ ! -e "$cache" ]] || \
