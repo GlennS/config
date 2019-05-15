@@ -43,14 +43,28 @@ autoload -U colors && colors # Enable colors in prompt
 autoload -Uz vcs_info
 zstyle ':vsc_info:*' enable git
 
-zstyle ':vcs_info:*' actionformats '%F{5}%F{2}%b%F{3}|%F{1}%a%F{5}%f'
-zstyle ':vcs_info:*' formats       '%F{5}%F{2}%b%F{5}%f'
+zstyle ':vcs_info:*' actionformats '%b|%a'
+zstyle ':vcs_info:*' formats       '%b'
 
-zstyle ':vcs_info:(sv[nk]|bzr):*' branchformat '%b%F{1}:%F{3}%r'
+zstyle ':vcs_info:(sv[nk]|bzr):*' branchformat '%b:%r'
 
-precmd () { vcs_info }
-export PS1='%F{5}%F{2}%n%F{5}:%F{3}%3~ > %f'
-export RPS1='${vcs_info_msg_0_}'
+precmd () {
+    vcs_info
+
+    PS1='%F{green}%n:%F{yellow}%3~ %F{cyan}> %f'
+
+    if [[ -n ${vcs_info_msg_0_} ]]; then
+        STATUS=$(command git status --porcelain 2> /dev/null | tail -n1)
+        if [[ -n $STATUS ]]; then
+            RPS1='%F{red}${vcs_info_msg_0_}%f'
+        else
+            RPS1='%F{green}${vcs_info_msg_0_}%f'
+        fi
+    else
+        # nothing from vcs_info
+        RPS1=''
+    fi
+}
 
 
 ## A command remake which removes a file, and then defers to make.
