@@ -66,10 +66,10 @@ bindsym $mod+Shift+space floating toggle
 bindsym $mod+space focus mode_toggle
 
 # switch to workspace
-bindsym $mod+1 workspace 1
-bindsym $mod+2 workspace 2
-bindsym $mod+3 workspace 3
-bindsym $mod+4 workspace 4
+bindsym $mod+1 workspace 1:editing
+bindsym $mod+2 workspace 2:browsing
+bindsym $mod+3 workspace 3:terminals
+bindsym $mod+4 workspace 4:chat
 bindsym $mod+5 workspace 5
 bindsym $mod+6 workspace 6
 bindsym $mod+7 workspace 7
@@ -78,10 +78,10 @@ bindsym $mod+9 workspace 9
 bindsym $mod+0 workspace 10
 
 # move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace 1
-bindsym $mod+Shift+2 move container to workspace 2
-bindsym $mod+Shift+3 move container to workspace 3
-bindsym $mod+Shift+4 move container to workspace 4
+bindsym $mod+Shift+1 move container to workspace 1:editing
+bindsym $mod+Shift+2 move container to workspace 2:browsing
+bindsym $mod+Shift+3 move container to workspace 3:terminals
+bindsym $mod+Shift+4 move container to workspace 4:chat
 bindsym $mod+Shift+5 move container to workspace 5
 bindsym $mod+Shift+6 move container to workspace 6
 bindsym $mod+Shift+7 move container to workspace 7
@@ -164,28 +164,36 @@ exec setxkbmap -option ctrl:nocaps
 # Launch some applications in particular places.
 workspace_layout tabbed
 
-assign [class="emacs"] 1
-assign [class="Emacs"] 1
+workspace 1:editing output HDMI-1 LVDS-1
+workspace 2:browsing output HDMI-1 LVDS-1
+workspace 3:terminals output LVDS-1
+workspace 4:chat output LVDS-1
 
-assign [class="Navigator"] 2
-assign [class="Firefox"] 2
-assign [class="Firefox-esr"] 2
+assign [class="emacs"] 1:editing
+assign [class="Emacs"] 1:editing
 
-assign [class="KeePass2"] 3
+assign [class="Navigator"] 2:browsing
+assign [class="Firefox"] 2:browsing
+assign [class="Firefox-esr"] 2:browsing
 
-assign [class="xterm"] 3
-assign [class="UXterm"] 3
+assign [class="KeePass2"] 3:terminals
 
-assign [class="Quasselclient"] 4
+assign [class="xterm"] 3:terminals
+assign [class="UXterm"] 3:terminals
+
+assign [class="Quasselclient"] 4:chat
+assign [class="Slack"] 4:chat
 
 exec emacs;
 exec firefox;
 
-exec i3-msg "workspace 3"
+exec i3-msg "workspace 3:terminals"
 
 # Add my ssh key
 exec uxterm
 exec uxterm -e "ssh-add ~/.ssh/versioncontrol.private.openssh"
+
+exec slack
 
 exec --no-startup-id nm-applet;
 exec --no-startup-id pasystray;
