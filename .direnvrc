@@ -10,7 +10,7 @@ use_nix() {
         [ -d .direnv ] || mkdir .direnv
         local tmp="$(mktemp "${cache}.tmp-XXXXXXXX")"
         trap "rm -rf '$tmp'" EXIT
-        nix-shell --show-trace "$@" --run 'direnv dump' > "$tmp" && mv "$tmp" "$cache"
+        nix-shell --pure --show-trace "$@" --run 'direnv dump' > "$tmp" && mv "$tmp" "$cache"
     fi
 
     local term_backup=$TERM
