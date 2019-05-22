@@ -34,12 +34,12 @@
         blacken # Python formatting
         ob-ipython
         nginx-mode
-        ## nix-mode # Out of date
+        nix-mode
         clojure-mode
         cider # Clojure
         gradle-mode # Java
         markdown-mode
-        ## sql-indent # Out of date
+        epkgs.elpaPackages.sql-indent
         yaml-mode
 
         htmlize # Syntax highlighting for HTML export
