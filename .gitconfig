@@ -6,4 +6,4 @@
 [merge]
 	tool = meld
 [core]
-	editor = emacsclient
+	editor = emacsclient -a emacs
