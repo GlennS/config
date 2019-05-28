@@ -38,7 +38,6 @@ source ~/.zsh/keys.zsh
 
 setopt prompt_subst
 autoload -U colors && colors # Enable colors in prompt
-##export PS1="%{$fg[cyan]%}[%n@%m:%/] %{$reset_color%}";
 
 autoload -Uz vcs_info
 zstyle ':vsc_info:*' enable git
@@ -51,7 +50,7 @@ zstyle ':vcs_info:(sv[nk]|bzr):*' branchformat '%b:%r'
 precmd () {
     vcs_info
 
-    PS1='%F{green}%n:%F{yellow}%3~ %F{cyan}> %f'
+    PS1='%F{yellow}%3~ %F{cyan}> %f'
 
     if [[ -n ${vcs_info_msg_0_} ]]; then
         STATUS=$(command git status --porcelain 2> /dev/null | tail -n1)
