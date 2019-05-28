@@ -13,9 +13,9 @@ use_nix() {
         nix-shell --pure --show-trace "$@" --run 'direnv dump' > "$tmp" && mv "$tmp" "$cache"
     fi
 
-    local term_backup=$TERM
+    local term_backup="$TERM" ssh_auth_sock_backup="$SSH_AUTH_SOCK" editor_backup="$EDITOR"
     direnv_load cat "$cache"
-    export TERM=$term_backup
+    export TERM="$term_backup" SSH_AUTH_SOCK="$ssh_auth_sock_backup" EDITOR="$editor_backup"
 
     if [[ $# = 0 ]]; then
         watch_file default.nix
