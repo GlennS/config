@@ -1,7 +1,11 @@
 ;;; JavaScript
 (setq js-indent-level 2)
-(setq js-expr-indent-offset 4)
+(setq js-expr-indent-offset 2)
 
+;; Use Flycheck instead of js2/rjsx for error checking.
+(setq js2-mode-show-parse-errors nil)
+(setq js2-mode-show-strict-warnings nil)
+(add-hook 'rjsx-mode-hook #'flycheck-mode)
 
 ;; Don't add newlines when writing JavaScript
 (add-hook 'js-mode-hook
@@ -9,15 +13,14 @@
             (set (make-local-variable 'require-final-newline)
                  nil)))
 
-;;; Languages for given file extensions
 (add-to-list 'auto-mode-alist '("\\.js$" . rjsx-mode))
 (add-to-list 'auto-mode-alist '("\\.jsx$" . rjsx-mode))
 (add-to-list 'auto-mode-alist '("\\.html$" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.php$" . web-mode))
-(add-hook 'clojure-mode-hook #'cider-mode)
 
 ;;; Clojure
 ;; Auto-complete for Clojure
+(add-hook 'clojure-mode-hook #'cider-mode)
 (add-hook 'cider-repl-mode-hook #'company-mode)
 (add-hook 'cider-mode-hook #'company-mode)
 

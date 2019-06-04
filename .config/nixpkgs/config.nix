@@ -18,6 +18,7 @@
 
         direnv
 
+        flycheck
         basic-mode
         web-mode
         js2-mode
