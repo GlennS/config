@@ -42,6 +42,7 @@
         markdown-mode
         epkgs.elpaPackages.sql-indent
         yaml-mode
+        terraform-mode
 
         htmlize # Syntax highlighting for HTML export
 
