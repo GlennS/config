@@ -43,6 +43,8 @@
         epkgs.elpaPackages.sql-indent
         yaml-mode
         terraform-mode
+        dockerfile-mode
+        docker-compose-mode
 
         htmlize # Syntax highlighting for HTML export
 
