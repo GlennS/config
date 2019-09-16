@@ -46,5 +46,8 @@
 ;;; Nix
 (setq nix-indent-function (quote nix-indent-line))
 
+;;; Terraform
+(add-hook `terraform-mode-hook #'flycheck-mode)
+
 ;;; Finish
 (provide `my-programming-languages)
