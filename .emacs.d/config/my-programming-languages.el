@@ -35,11 +35,6 @@
 ;; Use flymake
 (add-hook 'python-mode-hook '(lambda () (flymake-mode)))
 
-;; Use Black to enforce formatting on save
-(setq blacken-executable "black --py36")
-(setq blacken-line-length 96)
-(add-hook 'python-mode-hook 'blacken-mode)
-
 ;;; Latex
 (add-hook 'latex-mode-hook '(lambda () (flymake-mode)))
 
