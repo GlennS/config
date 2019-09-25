@@ -7,6 +7,8 @@
               '("/home/glenn/.nix-profile/bin")))
 
 ;; When we move into a buffer with a .envrc file, use it to set our environment and executable paths. Magic.
-(direnv-mode)
+(cond
+ ((string-equal system-type "windows-nt") nil)
+  ('true (direnv-mode)))
 
 (provide `my-programs)
