@@ -9,7 +9,10 @@ if (-not (Test-Path "$HOME\scoop")) {
 	Invoke-Expression (New-Object System.Net.WebClient).DownloadString('https://get.scoop.sh')
 }
 
-scoop install ag emacs cmake git firefox
+scoop install git # Needs to happen first so we can add extras
+git config --global core.sshCommand C:/OpenSSH-Win32/ssh.exe
+scoop bucket add extras
+scoop install ag emacs cmake firefox
 
 $SSH_AGENT_IDENTIES = ssh-add -l 2>&1
 
@@ -21,19 +24,15 @@ if ($SSH_AGENT_IDENTIES -eq "The agent has no identities.") {
 
 }
 
-Function ConfigF {
+function Config {
 	git --git-dir=$HOME/config.git/ --work-tree=$HOME $args
 }
 
-Set-Alias -scope Global -Name config -Value ConfigF
-
-Function PullAll {
+function PullAll {
 	ForEach ($repo in ".ssh","cammy","notes") {
 		git -C "$repo" pull
 	}
 	config pull
 }
-
-Set-Alias -scope Global -Name pullall -Value PullAll
 
 echo "Successfully loaded Glenn's Powershell profile."
