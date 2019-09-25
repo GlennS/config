@@ -9,7 +9,7 @@ if (-not (Test-Path "$HOME\scoop")) {
 	Invoke-Expression (New-Object System.Net.WebClient).DownloadString('https://get.scoop.sh')
 }
 
-scoop install ag emacs cmake git
+scoop install ag emacs cmake git firefox
 
 $SSH_AGENT_IDENTIES = ssh-add -l 2>&1
 
