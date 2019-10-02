@@ -12,7 +12,7 @@ if (-not (Test-Path "$HOME\scoop")) {
 scoop install git # Needs to happen first so we can add extras
 git config --global core.sshCommand C:/OpenSSH-Win32/ssh.exe
 scoop bucket add extras
-scoop install ag emacs cmake firefox
+scoop install ag emacs cmake firefox coreutils zip upx
 
 $SSH_AGENT_IDENTIES = ssh-add -l 2>&1
 
