@@ -29,7 +29,7 @@ function Config {
 }
 
 function PullAll {
-	ForEach ($repo in ".ssh","cammy","notes") {
+	ForEach ($repo in ".ssh","cammy","notes",".password-store") {
 		git -C "$repo" pull
 	}
 	config pull
