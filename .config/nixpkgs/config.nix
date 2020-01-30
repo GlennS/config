@@ -11,6 +11,8 @@
         ];
       };
 
+      myAWSVault = (super.pkgs.callPackage ./aws-vault.nix {});
+
       myPython3 = (super.pkgs.python37.withPackages (ps: [ ps.jupyter ps.setuptools ps.pip]));
 
       myEmacs = super.pkgs.emacsWithPackages (epkgs: (with epkgs.melpaPackages; [
