@@ -63,6 +63,7 @@
 
         smartparens
         rainbow-delimiters
+        dumb-jump
       ]));
     };
 }
