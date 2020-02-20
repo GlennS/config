@@ -13,7 +13,15 @@
 
       myAWSVault = (super.pkgs.callPackage ./aws-vault.nix {});
 
-      myPython3 = (super.pkgs.python37.withPackages (ps: [ ps.jupyter ps.setuptools ps.pip]));
+      myPython3 = (super.pkgs.python37.withPackages (ps: [
+        ps.jupyter
+        ps.setuptools
+        ps.black
+        ps.rope
+        ps.autopep8
+        ps.flake8
+        ps.jedi
+      ]));
 
       chamber = super.pkgs.runCommand "chamber-2.7.3" {} "mkdir -p $out/bin ; cp ${./chamber-v2.7.3-linux-amd64} $out/bin/chamber";
 
