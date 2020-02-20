@@ -13,7 +13,7 @@ if [[ $TERM == "dumb" ]]; then
     return
 fi
 
-source .profile
+source $HOME/.profile
 
 source $HOME/nix-zsh-completions/nix.plugin.zsh
 
