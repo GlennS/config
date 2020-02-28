@@ -35,8 +35,12 @@
 (add-hook 'sql-mode-hook 'sqlind-minor-mode)
 
 ;;; Python
-;; Use flymake
-(add-hook 'python-mode-hook '(lambda () (flymake-mode)))
+;; Use Elpy + flycheck
+;; (when (load "flycheck" t t)
+;;   (setq elpy-modules (delq 'elpy-module-flymake elpy-modules))
+;;   (add-hook 'elpy-mode-hook 'flycheck-mode))
+
+(elpy-enable)
 
 ;;; Latex
 (add-hook 'latex-mode-hook '(lambda () (flymake-mode)))
