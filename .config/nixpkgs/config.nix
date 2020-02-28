@@ -45,6 +45,7 @@
         company # R
         python-mode
         blacken # Python formatting
+        elpy
         ob-ipython
         nginx-mode
         nix-mode
