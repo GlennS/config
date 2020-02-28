@@ -78,3 +78,5 @@ alias sqlite3='rlwrap sqlite3'
 
 # Direnv
 eval "$(direnv hook zsh)"
+
+. ~/.zsh/functions/invoke.zsh-completion
