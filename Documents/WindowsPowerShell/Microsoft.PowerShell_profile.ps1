@@ -10,13 +10,12 @@ if (-not (Test-Path "$HOME\scoop")) {
 }
 
 scoop install git # Needs to happen first so we can add extras
-git config --global core.sshCommand C:/OpenSSH-Win32/ssh.exe
 scoop bucket add extras
-scoop install ag emacs cmake firefox coreutils zip upx
+scoop install ag emacs firefox coreutils zip
 
-$SSH_AGENT_IDENTIES = ssh-add -l 2>&1
+$SSH_AGENT_IDENTITIES = ssh-add -l 2>&1
 
-if ($SSH_AGENT_IDENTIES -eq "The agent has no identities.") {
+if ($SSH_AGENT_IDENTITIES -eq "The agent has no identities.") {
 	echo "Setting up SSH agent identity."
 	ssh-add "$HOME/.ssh/versioncontrol.private.openssh"
 } else {
@@ -29,7 +28,7 @@ function Config {
 }
 
 function PullAll {
-	ForEach ($repo in ".ssh","cammy","notes",".password-store") {
+	ForEach ($repo in ".ssh","octopus","notes",".password-store") {
 		git -C "$repo" pull
 	}
 	config pull
