@@ -1,6 +1,7 @@
 export PATH="$HOME/bin:$HOME/.nix-profile/bin:$PATH:$HOME/.local/bin"
 export NIX_SSL_CERT_FILE=/etc/ssl/certs/ca-certificates.crt
 export NIX_CHANNELS="$HOME/.nix-defexpr/channels"
+export SSH_AUTH_SOCK=/run/user/1000/gnupg/S.gpg-agent.ssh
 
 NIX_PATH=""
 for CHANNEL in "$NIX_CHANNELS"/*; do
