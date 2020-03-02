@@ -1,5 +1,6 @@
 [push]
-	default = simple
+# Push current branch even if you've never pushed it before
+	default = current
 [user]
 	name = Glenn Searby
 	email = glenn.searby@gmail.com
