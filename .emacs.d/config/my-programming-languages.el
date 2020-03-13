@@ -35,12 +35,8 @@
 (add-hook 'sql-mode-hook 'sqlind-minor-mode)
 
 ;;; Python
-;; Use Elpy + flycheck
-;; (when (load "flycheck" t t)
-;;   (setq elpy-modules (delq 'elpy-module-flymake elpy-modules))
-;;   (add-hook 'elpy-mode-hook 'flycheck-mode))
-
 (elpy-enable)
+(setq python-indent-guess-indent-offset nil)
 
 ;;; Latex
 (add-hook 'latex-mode-hook '(lambda () (flymake-mode)))
