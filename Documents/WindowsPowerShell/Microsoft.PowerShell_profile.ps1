@@ -3,7 +3,7 @@
 echo "Loading Glenn's Powershell profile."
 
 Set-ExecutionPolicy RemoteSigned -scope CurrentUser
-SET HOME="C:\Users\Glenn"
+setx HOME "C:\Users\Glenn"
 
 if (-not (Test-Path "$HOME\scoop")) {
 	Invoke-Expression (New-Object System.Net.WebClient).DownloadString('https://get.scoop.sh')
@@ -11,7 +11,13 @@ if (-not (Test-Path "$HOME\scoop")) {
 
 scoop install git # Needs to happen first so we can add extras
 scoop bucket add extras
-scoop install ag emacs firefox coreutils zip
+scoop install ag emacs firefox coreutils zip python
+
+if (pip freeze | findstr "jupyter==") {
+	echo "Jupyter found"
+} else {
+	pip install jupyter
+}
 
 $SSH_AGENT_IDENTITIES = ssh-add -l 2>&1
 
