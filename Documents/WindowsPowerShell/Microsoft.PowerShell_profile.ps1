@@ -29,7 +29,8 @@ function Config {
 
 function PullAll {
 	ForEach ($repo in ".ssh","octopus","notes",".password-store") {
-		git -C "$repo" pull
+		echo "Pulling $repo"
+		git -C "$HOME/$repo" pull
 	}
 	config pull
 }
