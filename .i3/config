@@ -189,9 +189,7 @@ exec firefox;
 
 exec i3-msg "workspace 3:terminals"
 
-# Add my ssh key
 exec uxterm
-exec uxterm -e "ssh-add -l | grep versioncontrol.private.openssh || ssh-add ~/.ssh/versioncontrol.private.openssh"
 
 exec slack
 

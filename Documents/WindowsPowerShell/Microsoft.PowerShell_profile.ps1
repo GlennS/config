@@ -19,16 +19,6 @@ if (pip freeze | findstr "jupyter==") {
 	pip install jupyter
 }
 
-$SSH_AGENT_IDENTITIES = ssh-add -l 2>&1
-
-if ($SSH_AGENT_IDENTITIES -eq "The agent has no identities.") {
-	echo "Setting up SSH agent identity."
-	ssh-add "$HOME/.ssh/versioncontrol.private.openssh"
-} else {
-	echo "SSH agent identity already set up."
-
-}
-
 function Config {
 	git --git-dir=$HOME/config.git/ --work-tree=$HOME $args
 }
