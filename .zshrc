@@ -75,6 +75,7 @@ alias pullall='for repo in ".ssh" "octopus" "notes" ".password-store"; do echo "
 alias config='git --git-dir=$HOME/config.git/ --work-tree=$HOME'
 alias spatialite='rlwrap spatialite'
 alias sqlite3='rlwrap sqlite3'
+alias nectr="docker-compose -f docker-compose.yml -f nectr.yml"
 
 # Direnv
 eval "$(direnv hook zsh)"
