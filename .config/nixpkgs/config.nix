@@ -58,6 +58,7 @@
         terraform-mode
         dockerfile-mode
         docker-compose-mode
+        graphql-mode
 
         htmlize # Syntax highlighting for HTML export
 
