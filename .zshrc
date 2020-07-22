@@ -76,6 +76,7 @@ alias config='git --git-dir=$HOME/config.git/ --work-tree=$HOME'
 alias spatialite='rlwrap spatialite'
 alias sqlite3='rlwrap sqlite3'
 alias nectr="docker-compose -f docker-compose.yml -f nectr.yml"
+alias origin="docker-compose -f docker-compose.yml -f origin.yml"
 
 # Direnv
 eval "$(direnv hook zsh)"
