@@ -6,6 +6,9 @@
 ;; Delete trailing whitespace when saving files
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 
+;; Make M-q formatting produce longer lines.
+(setq-default fill-column 100)
+
 ;; Change M-x <space> to toggle between ' ' and ''.
 (substitute-key-definition
  'just-one-space
