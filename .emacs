@@ -28,6 +28,7 @@
 (require 'my-magit)
 (require 'my-programming-languages)
 (require 'my-delimiters)
+(require 'my-docker)
 
 ;; TODO: move this into my-theme.el?
 (custom-set-faces
