@@ -144,6 +144,7 @@ bindsym button5 nop
 bar {
 	status_command i3status --config ~/.i3/status.conf
 	position top
+        tray_output primary
 
         ## These lines are deprecated, and should be replaced.
         wheel_down_cmd nop
