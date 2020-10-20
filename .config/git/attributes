@@ -1,0 +1,5 @@
+* whitespace=!indent,trail,space
+*.py eol=lf diff=python
+*.html diff=html
+*.sh whitespace=indent,trail,space eol=lf
+*.bat eol=crlf
