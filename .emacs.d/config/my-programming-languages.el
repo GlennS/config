@@ -18,8 +18,19 @@
 
 (add-to-list 'auto-mode-alist '("\\.js$" . rjsx-mode))
 (add-to-list 'auto-mode-alist '("\\.jsx$" . rjsx-mode))
+
+;; Use web-mode for editing web things and ReportLab templates
 (add-to-list 'auto-mode-alist '("\\.html$" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.php$" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.rml$" . web-mode))
+
+(setq web-mode-markup-indent-offset 4)
+(setq web-mode-css-indent-offset 4)
+(setq web-mode-code-indent-offset 4)
+
+(setq web-mode-engines-alist
+      '(("django" . "\\.html\\'")
+        ("django" . "\\.rml\\'")))
 
 ;;; Clojure
 ;; Auto-complete for Clojure
