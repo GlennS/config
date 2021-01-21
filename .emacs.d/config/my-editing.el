@@ -70,7 +70,6 @@
 (setq-default buffer-file-coding-system 'utf-8-unix)
 
 ;; Who actually likes the stupid bell?
-(setq visible-bell 1)
-; (setq ring-bell-function 'ignore)
+(setq ring-bell-function 'ignore)
 
 (provide `my-editing)
