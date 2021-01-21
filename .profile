@@ -1,5 +1,3 @@
-export SSH_AUTH_SOCK=/run/user/$(id -u)/gnupg/S.gpg-agent.ssh
-
 export EDITOR='emacsclient -a emacs'
 export GTK_THEME=Albatross
 export _JAVA_AWT_WM_NONREPARENTING=1
