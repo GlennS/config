@@ -5,6 +5,8 @@ echo "Loading Glenn's Powershell profile."
 Set-ExecutionPolicy RemoteSigned -scope CurrentUser
 setx HOME "C:\Users\Glenn"
 
+Set-PSReadLineOption -EditMode Emacs
+
 if (-not (Test-Path "$HOME\scoop")) {
 	Invoke-Expression (New-Object System.Net.WebClient).DownloadString('https://get.scoop.sh')
 }
