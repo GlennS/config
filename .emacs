@@ -31,6 +31,7 @@
 (require 'my-docker)
 
 ;; TODO: move this into my-theme.el?
+;; Note: DejaVU Sans Mono is not install by default on Windows — https://dejavu-fonts.github.io/Download.html
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
