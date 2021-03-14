@@ -9,16 +9,6 @@ if (-not (Test-Path "$HOME\scoop")) {
 	Invoke-Expression (New-Object System.Net.WebClient).DownloadString('https://get.scoop.sh')
 }
 
-scoop install git # Needs to happen first so we can add extras
-scoop bucket add extras
-scoop install ag emacs firefox coreutils zip python
-
-if (pip freeze | findstr "jupyter==") {
-	echo "Jupyter found"
-} else {
-	pip install jupyter
-}
-
 function Config {
 	git --git-dir=$HOME/config.git/ --work-tree=$HOME $args
 }
@@ -29,6 +19,23 @@ function PullAll {
 		git -C "$HOME/$repo" pull
 	}
 	config pull
+}
+
+function InstallPrograms {
+	scoop install git # Needs to happen first so we can add extras
+	scoop bucket add extras
+	scoop install ag emacs firefox coreutils zip python
+
+	if (pip freeze | findstr "jupyter==") {
+		echo "Jupyter found"
+	} else {
+		pip install jupyter
+	}
+}
+
+function UpdatePrograms {
+	scoop update git ag emacs firefox coreutils zip python
+	pip install jupyter
 }
 
 echo "Successfully loaded Glenn's Powershell profile."
