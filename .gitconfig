@@ -20,4 +20,4 @@
 [pull]
 	ff = only
 [commit]
-	template = /home/glenn/.git_commit_msg.md
+	template = ~/.git_commit_msg.md
