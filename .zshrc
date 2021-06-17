@@ -82,3 +82,12 @@ alias origin="INVOKE_CLIENT='origin' inv --search-root=/home/glenn/octopus/repos
 eval "$(direnv hook zsh)"
 
 . ~/.zsh/functions/invoke.zsh-completion
+
+
+# FZF Key Bindings
+FZF_BINDINGS="/home/glenn/.nix-profile/share/fzf/key-bindings.zsh"
+
+if [[ -f "${FZF_BINDINGS}" ]]; then
+    echo "Loading FZF bindings"
+    . "${FZF_BINDINGS}"
+fi
