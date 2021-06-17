@@ -75,8 +75,8 @@ alias pullall='for repo in ".ssh" "octopus" "notes" ".password-store"; do echo "
 alias config='git --git-dir=$HOME/config.git/ --work-tree=$HOME'
 alias spatialite='rlwrap spatialite'
 alias sqlite3='rlwrap sqlite3'
-alias nectr="docker-compose -f docker-compose.yml -f nectr.yml"
-alias origin="docker-compose -f docker-compose.yml -f origin.yml"
+alias nectr="INVOKE_CLIENT='nectr' inv --search-root=/home/glenn/octopus/repos/octodev -f  /home/glenn/octopus/repos/octodev/invoke.override.yml"
+alias origin="INVOKE_CLIENT='origin' inv --search-root=/home/glenn/octopus/repos/octodev -f  /home/glenn/octopus/repos/octodev/invoke.override.yml"
 
 # Direnv
 eval "$(direnv hook zsh)"
