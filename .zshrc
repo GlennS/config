@@ -88,6 +88,8 @@ eval "$(direnv hook zsh)"
 FZF_BINDINGS="/home/glenn/.nix-profile/share/fzf/key-bindings.zsh"
 
 if [[ -f "${FZF_BINDINGS}" ]]; then
-    echo "Loading FZF bindings"
     . "${FZF_BINDINGS}"
+    # I don't like fzf overriding Ctrl-T for it's file widget.
+    bindkey '^F' fzf-file-widget
+    bindkey '^T' transpose-chars
 fi
