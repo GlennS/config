@@ -77,6 +77,15 @@ alias spatialite='rlwrap spatialite'
 alias sqlite3='rlwrap sqlite3'
 alias nectr="INVOKE_CLIENT='nectr' inv --search-root=/home/glenn/octopus/repos/octodev -f  /home/glenn/octopus/repos/octodev/invoke.override.yml"
 alias origin="INVOKE_CLIENT='origin' inv --search-root=/home/glenn/octopus/repos/octodev -f  /home/glenn/octopus/repos/octodev/invoke.override.yml"
+alias aws-nectr-prod="AWS_PROFILE='nectr-prod-developer' aws"
+alias aws-nectr-test="AWS_PROFILE='nectr-test-developer' aws"
+alias aws-origin-prod="AWS_PROFILE='origin-prod-developer' aws"
+alias aws-origin-test="AWS_PROFILE='origin-test-developer' aws"
+alias aws-connect-nectr-prod="aws-connect -n consumerworker -p nectr-prod-session"
+alias aws-connect-nectr-test="aws-connect -n consumerworker -p nectr-test-developer"
+alias aws-connect-origin-prod="aws-connect -n consumerworker -p origin-prod-session"
+alias aws-connect-origin-test="aws-connect -n consumerworker -p origin-test-developer"
+
 
 # Direnv
 eval "$(direnv hook zsh)"
