@@ -33,3 +33,6 @@ xterm*highlightTextColor: #00dd66
 ! Alt-key behaviour
 xterm*eightBitInput: False
 xterm*metaSendsEscape: True
+
+! Put in paste buffer on highlight, instead of the weird highlight-specific thing
+xTerm*selectToClipboard: True
