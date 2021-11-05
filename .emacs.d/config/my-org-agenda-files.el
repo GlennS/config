@@ -2,8 +2,8 @@
       (cond ((string-equal (system-name) "glaptoph") `("~/notes/schedule.org"
                                                        "~/notes/todo.org"))
 
-            ('true (append `("~/notes/schedule.org"
-                             "~/octopus/scheduled.org")
-                           (directory-files "~/octopus/tasks")))))
+            ('true `("~/notes/schedule.org"
+                     "~/octopus/schedule.org"
+                     "~/octopus/tasks"))))
 
 (provide `my-org-agenda-files)
