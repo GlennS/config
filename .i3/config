@@ -165,13 +165,17 @@ exec setxkbmap -option ctrl:nocaps
 # Launch some applications in particular places.
 workspace_layout tabbed
 
-workspace 1:editing output HDMI-1 LVDS-1
-workspace 2:browsing output HDMI-1 LVDS-1
-workspace 3:terminals output LVDS-1
-workspace 4:chat output LVDS-1
+# Workspace 1 and 2 try to go on external monitor first, then try the laptop monitor.
+# Other workspaces go straight to the laptop monitor.
+workspace 1:editing output HDMI-1 DP-1 DP-1-8 LVDS-1 eDP-1
+workspace 2:browsing output HDMI-1 DP-1 DP-1-8 LVDS-1 eDP-1
+workspace 3:terminals output LVDS-1 eDP-1
+workspace 4:chat output LVDS-1 eDP-1
+workspace 5:vpn output LVDS-1 eDP-1
 
 assign [class="emacs"] 1:editing
 assign [class="Emacs"] 1:editing
+assign [class="jetbrains-datagrip"] 1:editing
 
 assign [class="Navigator"] 2:browsing
 assign [class="Firefox"] 2:browsing
@@ -184,6 +188,10 @@ assign [class="UXterm"] 3:terminals
 
 assign [class="Quasselclient"] 4:chat
 assign [class="Slack"] 4:chat
+
+assign [class="ZSTray"] 5:vpn
+
+exec --no-startup-id /home/glenn/.screenlayout/blah.sh
 
 exec emacs;
 exec firefox;
@@ -198,3 +206,4 @@ exec --no-startup-id nm-applet;
 exec --no-startup-id pasystray;
 exec --no-startup-id redshift;
 exec --no-startup-id blueman-applet;
+exec --no-startup-id systemctl --user start ZSTray
