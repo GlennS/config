@@ -94,10 +94,9 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 
-set $mode_exit Exit: (p)oweroff, (s)leep, (r)eboot, or (l)ogout
+set $mode_exit Exit: (s)hutdown, (r)eboot, or (l)ogout
 mode "$mode_exit" {
-     bindsym p exec --no-startup-id systemctl poweroff -i, mode "default"
-     bindsym s exec --no-startup-id systemctl suspend, mode "default"
+     bindsym s exec --no-startup-id systemctl poweroff -i, mode "default"
      bindsym r exec --no-startup-id systemctl reboot, mode "default"
      bindsym l exec --no-startup-id i3-msg exit, mode "default"
 
