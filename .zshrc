@@ -78,7 +78,7 @@ alias sqlite3='rlwrap sqlite3'
 alias octolocal="INVOKE_CLIENT='local' inv --search-root=/home/glenn/octopus/repos/octodev -f  /home/glenn/octopus/repos/octodev/invoke.override.yml"
 alias nectr="INVOKE_CLIENT='nectr' inv --search-root=/home/glenn/octopus/repos/octodev -f  /home/glenn/octopus/repos/octodev/invoke.override.yml"
 alias origin="INVOKE_CLIENT='origin' inv --search-root=/home/glenn/octopus/repos/octodev -f  /home/glenn/octopus/repos/octodev/invoke.override.yml"
-alias clear-merged-branches='git branch -d $(git branch --merged | grep -v \* | xargs)'
+alias clear-merged-branches='git branch -d $(git branch --merged | grep -v "\*\|master" | xargs)'
 alias aws-nectr-prod="AWS_PROFILE='nectr-prod-developer' aws"
 alias aws-nectr-test="AWS_PROFILE='nectr-test-developer' aws"
 alias aws-origin-prod="AWS_PROFILE='origin-prod-developer' aws"
