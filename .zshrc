@@ -75,6 +75,7 @@ alias pullall='for repo in ".ssh" "octopus" "notes" ".password-store"; do echo "
 alias config='git --git-dir=$HOME/config.git/ --work-tree=$HOME'
 alias spatialite='rlwrap spatialite'
 alias sqlite3='rlwrap sqlite3'
+alias octolocal="INVOKE_CLIENT='local' inv --search-root=/home/glenn/octopus/repos/octodev -f  /home/glenn/octopus/repos/octodev/invoke.override.yml"
 alias nectr="INVOKE_CLIENT='nectr' inv --search-root=/home/glenn/octopus/repos/octodev -f  /home/glenn/octopus/repos/octodev/invoke.override.yml"
 alias origin="INVOKE_CLIENT='origin' inv --search-root=/home/glenn/octopus/repos/octodev -f  /home/glenn/octopus/repos/octodev/invoke.override.yml"
 alias aws-nectr-prod="AWS_PROFILE='nectr-prod-developer' aws"
