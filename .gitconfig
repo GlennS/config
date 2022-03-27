@@ -23,5 +23,5 @@
 	template = ~/.git_commit_msg.md
 [fetch]
         prune = true
-[includeIf "gitdir/i:~/"]
+[includeIf "gitdir/i:C:/Users/Glenn/"]
         path = ~/.gitconfig-windows
