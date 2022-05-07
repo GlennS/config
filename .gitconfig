@@ -19,9 +19,9 @@
 	insteadOf = https://github.com/
 [pull]
 	ff = only
-[commit]
-	template = ~/.git_commit_msg.md
 [fetch]
         prune = true
+[includeIf "gitdir/i:~/octopus"]
+        path = ~/.gitconfig-octopus
 [includeIf "gitdir/i:C:/Users/Glenn/"]
         path = ~/.gitconfig-windows

@@ -1,0 +1,2 @@
+[commit]
+	template = ~/.git_commit_msg.md
