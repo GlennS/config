@@ -21,7 +21,7 @@
 	ff = only
 [fetch]
         prune = true
-[includeIf "gitdir/i:~/octopus"]
+[includeIf "gitdir/i:~/octopus/"]
         path = ~/.gitconfig-octopus
 [includeIf "gitdir/i:C:/Users/Glenn/"]
         path = ~/.gitconfig-windows
