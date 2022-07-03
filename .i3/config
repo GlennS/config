@@ -167,10 +167,10 @@ workspace_layout tabbed
 
 # Workspace 1 and 2 try to go on external monitor first, then try the laptop monitor.
 # Other workspaces go straight to the laptop monitor.
-workspace 1:editing output HDMI-1 DP-1 DP-1-8 LVDS-1 eDP-1
-workspace 2:browsing output HDMI-1 DP-1 DP-1-8 LVDS-1 eDP-1
-workspace 3:terminals output LVDS-1 eDP-1
-workspace 4:chat output LVDS-1 eDP-1
+workspace 1:editing output DP-2 HDMI-1 DP-1 DP-1-8 LVDS-1 eDP-1
+workspace 2:browsing output HDMI-1 DP-1 DP-1-8 LVDS-1 DP-2 eDP-1
+workspace 3:terminals output LVDS-1 eDP-1 DP-1 DP-2
+workspace 4:chat output DP- 1 LVDS-1 eDP-1
 workspace 5:vpn output LVDS-1 eDP-1
 
 assign [class="emacs"] 1:editing
@@ -191,7 +191,7 @@ assign [class="Slack"] 4:chat
 
 assign [class="ZSTray"] 5:vpn
 
-exec --no-startup-id /home/glenn/.screenlayout/blah.sh
+exec --no-startup-id /home/glenn/.screenlayout/home-dual-monitors.sh
 
 exec emacs;
 exec firefox;
