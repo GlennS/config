@@ -8,10 +8,8 @@
 (setq custom-file "/dev/null")
 ;;(load custom-file)
 
-(setq package-archives
-      (quote
-       (("gnu" . "http://elpa.gnu.org/packages/")
-        ("melpa" . "http://melpa.milkbox.net/packages/"))))
+(require 'package)
+(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
 
 (add-to-list 'load-path
              (expand-file-name "config" user-emacs-directory))
