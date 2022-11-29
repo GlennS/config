@@ -1,1 +1,1 @@
-export PATH="$HOME/bin:$HOME/.nix-profile/bin:$PATH"
+export PATH="$HOME/bin:$HOME/.nix-profile/bin:/home/glenn/.local/bin:$PATH"
