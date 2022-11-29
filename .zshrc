@@ -75,10 +75,13 @@ alias pullall='for repo in ".ssh" "octopus" "notes" ".password-store"; do echo "
 alias config='git --git-dir=$HOME/config.git/ --work-tree=$HOME'
 alias spatialite='rlwrap spatialite'
 alias sqlite3='rlwrap sqlite3'
-alias octolocal="INVOKE_CLIENT='local' inv --search-root=/home/glenn/octopus/repos/octodev -f  /home/glenn/octopus/repos/octodev/invoke.override.yml"
-alias nectr="INVOKE_CLIENT='nectr' inv --search-root=/home/glenn/octopus/repos/octodev -f  /home/glenn/octopus/repos/octodev/invoke.override.yml"
-alias origin="INVOKE_CLIENT='origin' inv --search-root=/home/glenn/octopus/repos/octodev -f  /home/glenn/octopus/repos/octodev/invoke.override.yml"
+alias aus="inv --search-root=/home/glenn/octopus/repos/octodev -f  /home/glenn/octopus/repos/octodev/invoke.override.aus.yml"
+alias nzl="inv --search-root=/home/glenn/octopus/repos/octodev -f  /home/glenn/octopus/repos/octodev/invoke.override.nzl.yml"
+alias nectr="inv --search-root=/home/glenn/octopus/repos/octodev -f  /home/glenn/octopus/repos/octodev/invoke.override.nectr.yml"
+alias origin="inv --search-root=/home/glenn/octopus/repos/octodev -f  /home/glenn/octopus/repos/octodev/invoke.override.origin.yml"
+alias oenz="inv --search-root=/home/glenn/octopus/repos/octodev -f  /home/glenn/octopus/repos/octodev/invoke.override.oenz.yml"
 alias clear-merged-branches='git branch -d $(git branch --merged | grep -v "\*\|master" | xargs)'
+alias clear-empty-dirs="find . -type d -empty -delete"
 alias aws-nectr-prod="AWS_PROFILE='nectr-prod-developer' aws"
 alias aws-nectr-test="AWS_PROFILE='nectr-test-developer' aws"
 alias aws-origin-prod="AWS_PROFILE='origin-prod-developer' aws"
