@@ -99,7 +99,7 @@ eval "$(direnv hook zsh)"
 
 
 # FZF Key Bindings
-FZF_BINDINGS="/home/glenn/.nix-profile/share/fzf/key-bindings.zsh"
+FZF_BINDINGS="/usr/share/doc/fzf/examples/key-bindings.zsh"
 
 if [[ -f "${FZF_BINDINGS}" ]]; then
     . "${FZF_BINDINGS}"
