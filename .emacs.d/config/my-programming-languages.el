@@ -46,8 +46,16 @@
 (add-hook 'sql-mode-hook 'sqlind-minor-mode)
 
 ;;; Python
-(elpy-enable)
+(add-hook 'python-mode-hook 'eglot-ensure)
+(add-hook 'python-mode-hook #'company-mode)
 (setq python-indent-guess-indent-offset nil)
+
+(require `blacken)
+(setq blacken-allow-py36 :t)
+(add-hook 'python-mode-hook 'blacken-mode)
+
+(require `isortify)
+(add-hook 'python-mode-hook 'isortify-mode)
 
 ;;; Latex
 (add-hook 'latex-mode-hook '(lambda () (flymake-mode)))
