@@ -204,7 +204,6 @@ exec slack
 
 exec --no-startup-id nm-applet;
 exec --no-startup-id pasystray;
-exec --no-startup-id redshift;
 exec --no-startup-id blueman-applet;
 exec --no-startup-id systemctl --user start ZSTray
 exec --no-startup-id flameshot
