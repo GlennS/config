@@ -71,7 +71,7 @@ remake() { rm "$@"; make "$@" }
 alias feh='feh --scale-down'
 alias ls='exa'
 alias grep='grep --color=auto'
-alias pullall='for repo in ".ssh" "octopus" "notes" ".password-store"; do echo "Pulling ${repo}"; git -C "/home/glenn/${repo}" pull; done; config pull'
+alias pullall='for repo in ".ssh" "octopus" "notes"; do echo "Pulling ${repo}"; git -C "/home/glenn/${repo}" pull; done; config pull'
 alias config='git --git-dir=$HOME/config.git/ --work-tree=$HOME'
 alias spatialite='rlwrap spatialite'
 alias sqlite3='rlwrap sqlite3'
