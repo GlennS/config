@@ -75,11 +75,41 @@ alias pullall='for repo in ".ssh" "octopus" "notes"; do echo "Pulling ${repo}"; 
 alias config='git --git-dir=$HOME/config.git/ --work-tree=$HOME'
 alias spatialite='rlwrap spatialite'
 alias sqlite3='rlwrap sqlite3'
-alias aus="inv --search-root=/home/glenn/octopus/repos/octodev -f  /home/glenn/octopus/repos/octodev/invoke.override.aus.yml"
-alias nzl="inv --search-root=/home/glenn/octopus/repos/octodev -f  /home/glenn/octopus/repos/octodev/invoke.override.nzl.yml"
-alias nectr="inv --search-root=/home/glenn/octopus/repos/octodev -f  /home/glenn/octopus/repos/octodev/invoke.override.nectr.yml"
-alias origin="inv --search-root=/home/glenn/octopus/repos/octodev -f  /home/glenn/octopus/repos/octodev/invoke.override.origin.yml"
-alias oenz="inv --search-root=/home/glenn/octopus/repos/octodev -f  /home/glenn/octopus/repos/octodev/invoke.override.oenz.yml"
+
+KRAKEN_DIR=~/octopus/repos/kraken-core
+DATA_DIR="$KRAKEN_DIR/data"
+
+AUS_ENV=ENV_FILE="$DATA_DIR/env"
+ORIGIN_PROD_ENV="ENV_FILE=$DATA_DIR/env-origin-prod"
+NECTR_PROD_ENV="ENV_FILE=$DATA_DIR/env-nectr-prod"
+OENZ_PROD_ENV="ENV_FILE=$DATA_DIR/env-oenz-prod"
+
+LOCALDEV_SETTINGS="DJANGO_SETTINGS_MODULE=localdev.settings"
+MANAGE="$KRAKEN_DIR/src/manage.py"
+RUNSERVER="$MANAGE runserver 8001"
+
+ORIGIN_WORKER="DJANGO_CONFIGURATION=OriginManagementCommand"
+ORIGIN_SUPPORTSITE="DJANGO_CONFIGURATION=OriginSupportSite"
+NECTR_WORKER="DJANGO_CONFIGURATION=NectrManagementCommand"
+NECTR_SUPPORTSITE="DJANGO_CONFIGURATION=NectrSupportSite"
+OENZ_WORKER="DJANGO_CONFIGURATION=OENZManagementCommand"
+OENZ_SUPPORTSITE="DJANGO_CONFIGURATION=OENZSupportSite"
+AUS_WORKER="$ORIGIN_WORKER"
+AUS_SUPPORTSITE="$ORIGIN_SUPPORTSITE"
+AUS_MIGRATE="DJANGO_CONFIGURATION=OriginMigrations"
+
+alias aus-worker="$LOCALDEV_SETTINGS $AUS_ENV $AUS_WORKER $MANAGE"
+alias aus-supportsite="$LOCALDEV_SETTINGS $AUS_ENV $AUS_SUPPORTSITE $RUNSERVER"
+alias aus-migrate="$LOCALDEV_SETTINGS $AUS_ENV $AUS_MIGRATE $MANAGE migrate"
+alias origin-worker="$LOCALDEV_SETTINGS $ORIGIN_PROD_ENV $ORIGIN_WORKER $MANAGE"
+alias origin-supportsite="$LOCALDEV_SETTINGS $ORIGIN_PROD_ENV $ORIGIN_SUPPORTSITE $RUNSERVER"
+alias nectr-worker="$LOCALDEV_SETTINGS $NECTR_PROD_ENV $NECTR_WORKER $MANAGE"
+alias nectr-supportsite="$LOCALDEV_SETTINGS $NECTR_PROD_ENV $NECTR_SUPPORTSITE $RUNSERVER"
+alias oenz-worker="$LOCALDEV_SETTINGS $OENZ_PROD_ENV $OENZ_WORKER $MANAGE"
+alias oenz-supportsite="$LOCALDEV_SETTINGS $OENZ_PROD_ENV $OENZ_SUPPORTSITE $RUNSERVER"
+alias migrate-all="$LOCALDEV_SETTINGS $AUS_ENV inv localdev.migrate-all --client Origin"
+
+alias tst="inv localdev.pytest"
 alias clear-merged-branches='git branch -d $(git branch --merged | grep -v "\*\|master" | xargs)'
 alias clear-empty-dirs="find . -type d -empty -delete"
 alias aws-nectr-prod="AWS_PROFILE='nectr-prod-developer' aws"
