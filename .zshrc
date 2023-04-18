@@ -116,14 +116,6 @@ alias oenz-supportsite="$LOCALDEV_SETTINGS $OENZ_PROD_ENV $OENZ_SUPPORTSITE $RUN
 alias tst="inv localdev.pytest"
 alias clear-merged-branches='git branch -d $(git branch --merged | grep -v "\*\|master" | xargs)'
 alias clear-empty-dirs="find . -type d -empty -delete"
-alias aws-nectr-prod="AWS_PROFILE='nectr-prod-developer' aws"
-alias aws-nectr-test="AWS_PROFILE='nectr-test-developer' aws"
-alias aws-origin-prod="AWS_PROFILE='origin-prod-developer' aws"
-alias aws-origin-test="AWS_PROFILE='origin-test-developer' aws"
-alias aws-connect-nectr-prod="aws-connect -n consumerworker -p nectr-prod-session"
-alias aws-connect-nectr-test="aws-connect -n consumerworker -p nectr-test-developer"
-alias aws-connect-origin-prod="aws-connect -n consumerworker -p origin-prod-session"
-alias aws-connect-origin-test="aws-connect -n consumerworker -p origin-test-developer"
 
 
 # Direnv
