@@ -1,11 +1,11 @@
-[push]
-# Push current branch even if you've never pushed it before
-	default = current
+[init]
+        defaultBranch = main
 [user]
 	name = Glenn Searby
 	email = glenn.searby@gmail.com
 [merge]
 	tool = meld
+        conflictstyle = zdiff3
 [core]
 	editor = emacsclient -a emacs
 [remote]
@@ -21,6 +21,12 @@
 	ff = only
 [fetch]
         prune = true
+[push]
+        autoSetupRemote = true
+        # Push current branch even if you've never pushed it before
+	default = current
+[diff]
+        algorithm = histogram
 [includeIf "gitdir/i:~/octopus/"]
         path = ~/.gitconfig-octopus
 [includeIf "gitdir/i:C:/Users/Glenn/"]
