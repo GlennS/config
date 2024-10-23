@@ -127,9 +127,23 @@ eval "$(direnv hook zsh)"
 # FZF Key Bindings
 FZF_BINDINGS="/usr/share/doc/fzf/examples/key-bindings.zsh"
 
+fzf-git-branch ()
+{
+    git branch | fzf --height=30% --reverse
+}
+
+fzf-git-branch-widget() {
+  LBUFFER="${LBUFFER}$(fzf-git-branch)"
+  local ret=$?
+  zle reset-prompt
+  return $ret
+}
+
 if [[ -f "${FZF_BINDINGS}" ]]; then
     . "${FZF_BINDINGS}"
     # I don't like fzf overriding Ctrl-T for it's file widget.
     bindkey '^F' fzf-file-widget
     bindkey '^T' transpose-chars
+    zle -N fzf-git-branch-widget
+    bindkey '^V' fzf-git-branch-widget
 fi
