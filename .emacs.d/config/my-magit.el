@@ -6,4 +6,7 @@
 
 (global-set-key (kbd "C-c g") 'magit-status)
 
+(require 'browse-at-remote)
+(global-set-key (kbd "C-c C-g") 'browse-at-remote)
+
 (provide `my-magit)
