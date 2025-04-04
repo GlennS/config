@@ -1,5 +1,7 @@
 (global-visual-line-mode 1) ; Word-wrap on
 
+(editorconfig-mode 1)
+
 ;; Default to indenting with spaces
 (setq-default indent-tabs-mode nil)
 
