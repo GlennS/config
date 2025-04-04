@@ -24,6 +24,7 @@
 (require 'my-editing)
 (require 'my-dired)
 (require 'my-magit)
+(require 'ruffify)
 (require 'my-programming-languages)
 (require 'my-delimiters)
 (require 'my-docker)

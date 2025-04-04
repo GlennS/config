@@ -50,12 +50,8 @@
 (add-hook 'python-mode-hook #'company-mode)
 (setq python-indent-guess-indent-offset nil)
 
-(require `blacken)
-(setq blacken-allow-py36 :t)
-(add-hook 'python-mode-hook 'blacken-mode)
-
-(require `isortify)
-(add-hook 'python-mode-hook 'isortify-mode)
+(require 'ruffify)
+(add-hook 'python-mode-hook 'ruffify-mode)
 
 ;;; Latex
 (add-hook 'latex-mode-hook '(lambda () (flymake-mode)))
