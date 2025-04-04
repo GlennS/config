@@ -1,6 +1,8 @@
 (setq org-todo-keywords
       '((sequence "BLOCKED" "IN-PROGRESS" "TODO" "|" "DONE" "FAILED")))
 
+(setq org-export-with-toc nil)
+
 (setq org-babel-load-languages
       (quote ((awk . t)
               (dot . t)
