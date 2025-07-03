@@ -16,7 +16,7 @@ function Config {
 }
 
 function PullAll {
-	ForEach ($repo in ".ssh","octopus","notes",".password-store") {
+	ForEach ($repo in ".ssh","octopus","notes") {
 		echo "Pulling $repo"
 		git -C "$HOME/$repo" pull
 	}
