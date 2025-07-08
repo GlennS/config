@@ -11,3 +11,6 @@
 	merge = refs/heads/master
 [status]
 	showUntrackedFiles = no
+[branch "main"]
+	remote = origin
+	merge = refs/heads/main
