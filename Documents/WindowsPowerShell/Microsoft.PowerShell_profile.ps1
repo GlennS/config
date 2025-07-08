@@ -25,19 +25,13 @@ function PullAll {
 
 function InstallPrograms {
 	scoop install git # Needs to happen first so we can add extras
+	# This can fail due to my .gitconfig insteadOf rule translating https to ssh
 	scoop bucket add extras
 	scoop install ag emacs firefox coreutils zip python
-
-	if (pip freeze | findstr "jupyter==") {
-		echo "Jupyter found"
-	} else {
-		pip install jupyter
-	}
 }
 
 function UpdatePrograms {
 	scoop update git ag emacs firefox coreutils zip python
-	pip install jupyter
 }
 
 echo "Successfully loaded Glenn's Powershell profile."
