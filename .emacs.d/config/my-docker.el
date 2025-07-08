@@ -1,3 +1,6 @@
+;; Make sure it exists!
+(require 'tramp)
+
 ;; Open files in Docker containers like so: /docker:drunk_bardeen:/etc/passwd
 (push
  (cons
