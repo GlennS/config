@@ -10,7 +10,7 @@
               (python . t)
               (ruby . t)
               (js . t)
-              (ipython . t)
+              (python . t)
               )))
 
 (setq org-confirm-babel-evaluate nil)
