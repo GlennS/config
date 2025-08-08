@@ -48,6 +48,8 @@ bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
+bindsym $mod+Shift+o move workspace to output up
+bindsym $mod+Shift+l move workspace to output down
 bindsym $mod+Shift+less move workspace to output left
 bindsym $mod+Shift+greater move workspace to output right
 
