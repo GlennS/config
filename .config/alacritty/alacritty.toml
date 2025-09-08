@@ -1,0 +1,11 @@
+# ~/.config/alacritty/alacritty.toml
+
+[cursor]
+style = { blinking = "On" }
+
+[font]
+size = 14.0
+
+[font.normal]
+family = "DejaVu Sans Mono"
+style = "Book"
