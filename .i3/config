@@ -185,8 +185,7 @@ assign [class="Firefox-esr"] 2:browsing
 
 assign [class="KeePass2"] 3:terminals
 
-assign [class="xterm"] 3:terminals
-assign [class="UXterm"] 3:terminals
+assign [class="Alacritty"] 3:terminals
 
 assign [class="Quasselclient"] 4:chat
 assign [class="Slack"] 4:chat
@@ -196,13 +195,8 @@ assign [class="ZSTray"] 5:vpn
 exec --no-startup-id /home/glenn/.screenlayout/home-dual-monitors.sh
 
 exec emacs;
-exec firefox;
 
-exec i3-msg "workspace 3:terminals"
-
-exec uxterm
-
-exec slack
+exec i3-msg "workspace 1:editing"
 
 exec --no-startup-id nm-applet;
 exec --no-startup-id pasystray;
