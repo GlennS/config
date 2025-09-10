@@ -1,5 +1,5 @@
 (setq org-agenda-files
-      (cond ((string-equal (system-name) "GLAPTOPH") `("~/notes/schedule.org"
+      (cond ((string-equal (system-name) "glaptopw2") `("~/notes/schedule.org"
                                                        "~/notes/todo.org"))
 
             ('true `("~/notes/schedule.org"
