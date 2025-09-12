@@ -76,47 +76,9 @@ alias config='git --git-dir=$HOME/config.git/ --work-tree=$HOME'
 alias spatialite='rlwrap spatialite'
 alias sqlite3='rlwrap sqlite3'
 
-KRAKEN_DIR=~/octopus/repos/kraken-core
-DATA_DIR="$KRAKEN_DIR/data"
 
-AUS_ENV=ENV_FILE="$DATA_DIR/env"
-ORIGIN_PROD_ENV="ENV_FILE=$DATA_DIR/env-origin-prod"
-NECTR_PROD_ENV="ENV_FILE=$DATA_DIR/env-nectr-prod"
-OENZ_PROD_ENV="ENV_FILE=$DATA_DIR/env-oenz-prod"
-
-LOCALDEV_SETTINGS="DJANGO_SETTINGS_MODULE=localdev.settings"
-MANAGE="$KRAKEN_DIR/src/manage.py"
-RUNSERVER="$MANAGE runserver 8001"
-
-ORIGIN_COMMAND="DJANGO_CONFIGURATION=OriginManagementCommand"
-ORIGIN_WORKER="DJANGO_CONFIGURATION=OriginWorker"
-ORIGIN_SUPPORTSITE="DJANGO_CONFIGURATION=OriginSupportSite"
-NECTR_COMMAND="DJANGO_CONFIGURATION=NectrManagementCommand"
-NECTR_SUPPORTSITE="DJANGO_CONFIGURATION=NectrSupportSite"
-OENZ_COMMAND="DJANGO_CONFIGURATION=OENZManagementCommand"
-OENZ_SUPPORTSITE="DJANGO_CONFIGURATION=OENZSupportSite"
-AUS_COMMAND="$ORIGIN_COMMAND"
-AUS_WORKER="$ORIGIN_WORKER"
-AUS_SUPPORTSITE="$ORIGIN_SUPPORTSITE"
-AUS_MIGRATE="DJANGO_CONFIGURATION=OriginMigrations"
-
-alias aus-command="$LOCALDEV_SETTINGS $AUS_ENV $AUS_COMMAND $MANAGE"
-alias aus-worker="$LOCALDEV_SETTINGS $AUS_ENV $AUS_WORKER celery -A octoenergy.celery_bootstrap.app worker -l info"
-alias aus-supportsite="$LOCALDEV_SETTINGS $AUS_ENV $AUS_SUPPORTSITE $RUNSERVER --skip-checks"
-alias aus-migrate="$LOCALDEV_SETTINGS $AUS_ENV $AUS_MIGRATE $MANAGE migrate"
-alias aus-migrate-all="for database in default consumption ink messaging voice; do aus-migrate --database=\$database; done"
-alias aus-makemigrations="$LOCALDEV_SETTINGS $AUS_ENV $AUS_MIGRATE $MANAGE makemigrations"
-alias origin-command="$LOCALDEV_SETTINGS $ORIGIN_PROD_ENV $ORIGIN_COMMAND $MANAGE"
-alias origin-supportsite="$LOCALDEV_SETTINGS $ORIGIN_PROD_ENV $ORIGIN_SUPPORTSITE $RUNSERVER --skip-checks"
-alias nectr-command="$LOCALDEV_SETTINGS $NECTR_PROD_ENV $NECTR_COMMAND $MANAGE"
-alias nectr-supportsite="$LOCALDEV_SETTINGS $NECTR_PROD_ENV $NECTR_SUPPORTSITE $RUNSERVER --skip-checks"
-alias oenz-command="$LOCALDEV_SETTINGS $OENZ_PROD_ENV $OENZ_COMMAND $MANAGE"
-alias oenz-supportsite="$LOCALDEV_SETTINGS $OENZ_PROD_ENV $OENZ_SUPPORTSITE $RUNSERVER --skip-checks"
-
-alias tst="inv localdev.pytest"
 alias clear-merged-branches='git branch -d $(git branch --merged | grep -v "\*\|master" | xargs)'
 alias clear-empty-dirs="find . -type d -empty -delete"
-
 
 # Direnv
 eval "$(direnv hook zsh)"
@@ -146,4 +108,14 @@ if [[ -f "${FZF_BINDINGS}" ]]; then
     bindkey '^T' transpose-chars
     zle -N fzf-git-branch-widget
     bindkey '^V' fzf-git-branch-widget
+fi
+
+
+export PIP_REQUIRE_VIRTUALENV=true
+
+# opencode
+export PATH=/home/glenn/.opencode/bin:$PATH
+
+if [[ -e .zshrc-kraken ]]; then
+    . ~/.zshrc-kraken
 fi
