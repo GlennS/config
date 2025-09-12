@@ -188,7 +188,6 @@ assign [class="KeePass2"] 3:terminals
 
 assign [class="Alacritty"] 3:terminals
 
-assign [class="Quasselclient"] 4:chat
 assign [class="Slack"] 4:chat
 
 assign [class="ZSTray"] 5:vpn
