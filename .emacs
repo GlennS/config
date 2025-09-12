@@ -22,7 +22,6 @@
 (require 'ruffify)
 (require 'my-programming-languages)
 (require 'my-delimiters)
-(require 'my-docker)
 
 ;; TODO: move this into my-theme.el?
 ;; Note: DejaVU Sans Mono is not install by default on Windows — https://dejavu-fonts.github.io/Download.html
