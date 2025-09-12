@@ -189,6 +189,8 @@ assign [class="KeePass2"] 3:terminals
 assign [class="Alacritty"] 3:terminals
 
 assign [class="Slack"] 4:chat
+assign [class="spotify"] 4:chat
+assign [class="Spotify"] 4:chat
 
 assign [class="ZSTray"] 5:vpn
 
