@@ -1,12 +1,7 @@
 ;;; .emacs
 
-;; Load all our installed packages right now.
-(setq package-enable-at-startup nil)
-(package-initialize)
-
-;; We don't want our customizations saved, thanks.
-(setq custom-file "/dev/null")
-;;(load custom-file)
+;; When Emacs asks us to customize stuff, here's where it goes
+(setq custom-file "~/.emacs.d/config/custom.el")
 
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
