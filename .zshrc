@@ -15,6 +15,8 @@ fi
 
 source $HOME/.profile
 
+eval `keychain --eval --agents ssh`
+
 source $HOME/nix-zsh-completions/nix.plugin.zsh
 
 # My custom function path
