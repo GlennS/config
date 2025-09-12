@@ -192,7 +192,7 @@ assign [class="Slack"] 4:chat
 
 assign [class="ZSTray"] 5:vpn
 
-exec --no-startup-id /home/glenn/.screenlayout/home-dual-monitors.sh
+exec --no-startup-id autorandr --change
 
 exec emacs;
 
