@@ -17,7 +17,9 @@ source $HOME/.profile
 
 eval `keychain --eval --agents ssh`
 
-source $HOME/nix-zsh-completions/nix.plugin.zsh
+if [[ -f ~/nix-zsh-completions/nix.plugin.zsh ]]; then
+    . ~/nix-zsh-completions/nix.plugin.zsh
+fi
 
 # My custom function path
 fpath=(~/.zsh/functions $HOME/nix-zsh-completions $HOME/.nix-profile/share/zsh/site-functions $fpath)
