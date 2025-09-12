@@ -167,12 +167,13 @@ exec setxkbmap -option ctrl:nocaps
 # Launch some applications in particular places.
 workspace_layout tabbed
 
-# Workspace 1 and 2 try to go on external monitor first, then try the laptop monitor.
+# Workspace 1 goes to the middle monitor if available, falling back to the laptop monitor
+workspace 1:editing output DP-1 LVDS-1 eDP-1
+# Workspace 2 goes to the left monitor if available, falling back to the laptop monitor.
+workspace 2:browsing output HDMI-1 LVDS-1 eDP-1
 # Other workspaces go straight to the laptop monitor.
-workspace 1:editing output DP-2 HDMI-1 DP-1 DP-1-8 LVDS-1 eDP-1
-workspace 2:browsing output HDMI-1 DP-1 DP-1-8 LVDS-1 DP-2 eDP-1
-workspace 3:terminals output LVDS-1 eDP-1 DP-1 DP-2
-workspace 4:chat output DP- 1 LVDS-1 eDP-1
+workspace 3:terminals output LVDS-1 eDP-1
+workspace 4:chat output LVDS-1 eDP-1
 workspace 5:vpn output LVDS-1 eDP-1
 
 assign [class="emacs"] 1:editing
