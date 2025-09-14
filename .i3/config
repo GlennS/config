@@ -170,7 +170,7 @@ workspace_layout tabbed
 # Workspace 1 goes to the middle monitor if available, falling back to the laptop monitor
 workspace 1:editing output DP-1 LVDS-1 eDP-1
 # Workspace 2 goes to the left monitor if available, falling back to the laptop monitor.
-workspace 2:browsing output HDMI-1 LVDS-1 eDP-1
+workspace 2:browsing output DP-3 HDMI-1 LVDS-1 eDP-1
 # Other workspaces go straight to the laptop monitor.
 workspace 3:terminals output LVDS-1 eDP-1
 workspace 4:chat output LVDS-1 eDP-1
