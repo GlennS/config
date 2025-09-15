@@ -27,6 +27,8 @@
 	default = current
 [diff]
         algorithm = histogram
+[rerere]
+        enabled = true
 [includeIf "gitdir/i:~/octopus/"]
         path = ~/.gitconfig-octopus
 [includeIf "gitdir/i:C:/Users/Glenn/"]
