@@ -10,8 +10,6 @@
         conflictstyle = zdiff3
 [core]
 	editor = emacsclient -a emacs
-[remote]
-        pushDefault = origin
 [filter "lfs"]
 	required = true
 	clean = git-lfs clean -- %f
