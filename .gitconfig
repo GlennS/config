@@ -4,7 +4,7 @@
 	name = Glenn Searby
 	email = glenn.searby@gmail.com
 [alias]
-        recent = "!f() { git branch --sort=-committerdate --format='%(committerdate:relative)%09%(refname:short)' | head -n 10; }; f"
+        recent = "!git branch --sort=-committerdate --format='%(committerdate:relative)%09%(refname:short)' | head -n 10"
 [merge]
 	tool = meld
         conflictstyle = zdiff3
