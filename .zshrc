@@ -15,7 +15,9 @@ fi
 
 source $HOME/.profile
 
-eval `keychain --eval --agents ssh`
+if [[ -z $SSH_AUTH_SOCK ]]; then
+    export SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket)"
+fi
 
 if [[ -f ~/nix-zsh-completions/nix.plugin.zsh ]]; then
     . ~/nix-zsh-completions/nix.plugin.zsh
