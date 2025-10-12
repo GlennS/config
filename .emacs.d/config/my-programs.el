@@ -1,19 +1,28 @@
-(setq browse-url-browser-function (quote browse-url-firefox))
-(setq image-dired-external-viewer "/usr/bin/feh")
+;; --- System & External Programs ---
 
-;; Include Nix binaries
-(setq exec-path
-      (append exec-path
-              '("/home/glenn/.nix-profile/bin")))
+;; Set the default browser function for browse-url and external image viewer for image-dired.
+(setq browse-url-browser-function 'browse-url-firefox
+      image-dired-external-viewer "/usr/bin/feh")
 
-;; When we move into a buffer with a .envrc file, use it to set our environment and executable paths. Magic.
-(cond
- ((string-equal system-type "windows-nt") nil)
- ('true (direnv-mode)))
+;; Include Nix binaries in the executable path.
+(add-to-list 'exec-path "/home/glenn/.nix-profile/bin" t)
 
-;; ag
-(require 'ag)
-(setq ag-highlight-search :t)
-(setq ag-reuse-buffers :t)
+;; --- direnv ---
 
-(provide `my-programs)
+;; Automatically manage environment variables with direnv.
+(use-package direnv
+  :config
+  ;; Only enable direnv-mode if not on Windows
+  (unless (string-equal system-type "windows-nt")
+    (direnv-mode)))
+
+;; --- ag (The Silver Searcher) ---
+
+;; Configuration for the ag package.
+(use-package ag
+  :config
+  ;; Set the variables as soon as the package is loaded.
+  (setq ag-highlight-search :t
+        ag-reuse-buffers :t))
+
+(provide 'my-programs)
