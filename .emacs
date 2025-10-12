@@ -31,15 +31,6 @@
 (require 'my-programming-languages)
 (require 'my-delimiters)
 
-;; TODO: move this into my-theme.el?
-;; Note: DejaVU Sans Mono is not install by default on Windows — https://dejavu-fonts.github.io/Download.html
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(default ((t (:inherit nil :stipple nil :background "#242424" :foreground "#f6f3e8" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 130 :width normal :foundry "GNU " :family "DejaVu Sans Mono")))))
-
 (defun kill-other-buffers ()
   "Kill all other buffers [http://emacswiki.org/emacs/KillingBuffers#toc2]."
   (interactive)
