@@ -1,39 +1,4 @@
 (use-package markdown-mode
-  :defer t ; Defer loading until a markdown file is opened
-  :config
-  ;; --- Custom Functions for Table/Heading Movement and Manipulation ---
-
-  (defun markdown-move-heading-or-row-up ()
-    "Move heading up, or move a table row up if at a table."
-    (interactive)
-    (if (markdown-table-at-point-p) (markdown-table-move-row-up)
-      (markdown-move-up)))
-
-  (defun markdown-move-heading-or-row-down ()
-    "Move heading down, or move a table row down if at a table."
-    (interactive)
-    (if (markdown-table-at-point-p) (markdown-table-move-row-down)
-      (markdown-move-down)))
-
-  ;; ... [All other custom functions defined here] ...
-
-  (defun markdown-delete-column-or-promote ()
-    "Delete table column, or promote a heading if not at a table."
-    (interactive)
-    (if (markdown-table-at-point-p) (markdown-table-delete-column)
-      (markdown-promote)))
-
-  ;; --- Keybindings ---
-  :bind
-  (("M-<return>" . 'markdown-insert-header-dwim)
-   ("C-c C-l"    . 'markdown-insert-link)
-   ;; Custom Functions
-   ("M-<up>"     . 'markdown-move-heading-or-row-up)
-   ("M-<down>"   . 'markdown-move-heading-or-row-down)
-   ;; ... [All other bindings here] ...
-   ("C-c C-|"    . 'markdown-table-convert-region)))
-
-(use-package markdown-mode
   ;; :defer t is optional here, as :bind implicitly defers loading.
   ;; We keep it for clarity that we want deferred loading.
   :defer t
