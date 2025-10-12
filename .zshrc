@@ -15,7 +15,9 @@ fi
 
 source $HOME/.profile
 
-eval `keychain --eval --agents ssh`
+if [[ -z $SSH_AUTH_SOCK ]]; then
+    eval `keychain --eval --agents ssh`
+fi
 
 if [[ -f ~/nix-zsh-completions/nix.plugin.zsh ]]; then
     . ~/nix-zsh-completions/nix.plugin.zsh
