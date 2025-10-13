@@ -1,6 +1,4 @@
 (use-package org
-  :requires (ob-mode)
-
   :init
   ;; Set the global keybinding for the Agenda.
   (global-set-key (kbd "C-c a") 'org-agenda)
@@ -10,24 +8,7 @@
   (setq org-todo-keywords
         '((sequence "BLOCKED" "IN-PROGRESS" "TODO" "|" "DONE" "FAILED")))
 
-  ;; --- Babel Configuration ---
-  ;; Suppress the confirmation prompt before evaluating Babel source blocks.
-  (setq org-confirm-babel-evaluate nil)
-
-  ;; Use rjsx for JavaScript source blocks instead of the default js-mode.
-  (org-babel-set-lang-mode "js" 'rjsx-mode)
-
-  ;; Configure Org Babel (Source Code Execution)
-  (org-babel-do-load-languages
-    'org-babel-load-languages
-    '((awk . t)
-      (dot . t)
-      (R . t)
-      (ruby . t)
-      (js . t)))
-
   ;; --- Export Configuration ---
-
   ;; Disable the Table of Contents on export.
   (setq org-export-with-toc nil)
 
@@ -57,5 +38,27 @@
 ;;       (ipython . t)))
 
 ;;   (setq python-shell-interpreter "python3"))
+
+(eval-after-load 'org-babel
+  '(progn
+     ;; Suppress the confirmation prompt before evaluating Babel source blocks.
+     (setq org-confirm-babel-evaluate nil)
+
+     ;; Use rjsx for JavaScript source blocks instead of the default js-mode.
+     ;; This function is now guaranteed to be defined.
+     (org-babel-set-lang-mode "js" 'rjsx-mode)
+
+     ;; Configure Org Babel (Source Code Execution)
+     (org-babel-do-load-languages
+       'org-babel-load-languages
+       '((awk . t)
+         (dot . t)
+         (R . t)
+         (ruby . t)
+         (js . t)))))
+
+;; Needed for markdown export
+(eval-after-load 'org
+  '(require 'ox-md))
 
 (provide 'my-org-mode)
