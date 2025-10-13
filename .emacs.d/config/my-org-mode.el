@@ -1,19 +1,21 @@
 (use-package org
-  ;; --- Initial Settings & Global Hooks ---
+  :requires (ob-mode)
+
   :init
   ;; Set the global keybinding for the Agenda.
   (global-set-key (kbd "C-c a") 'org-agenda)
 
-  (require 'ob-core)
-
-  ;; Use rjsx for JavaScript source blocks instead of the default js-mode.
-  (org-babel-set-lang-mode "js" 'rjsx-mode)
-
-  ;; --- Configuration ---
   :config
   ;; Define the custom TODO keyword sequence.
   (setq org-todo-keywords
         '((sequence "BLOCKED" "IN-PROGRESS" "TODO" "|" "DONE" "FAILED")))
+
+  ;; --- Babel Configuration ---
+  ;; Suppress the confirmation prompt before evaluating Babel source blocks.
+  (setq org-confirm-babel-evaluate nil)
+
+  ;; Use rjsx for JavaScript source blocks instead of the default js-mode.
+  (org-babel-set-lang-mode "js" 'rjsx-mode)
 
   ;; Configure Org Babel (Source Code Execution)
   (org-babel-do-load-languages
@@ -23,9 +25,6 @@
       (R . t)
       (ruby . t)
       (js . t)))
-
-  ;; Suppress the confirmation prompt before evaluating Babel source blocks.
-  (setq org-confirm-babel-evaluate nil)
 
   ;; --- Export Configuration ---
 
