@@ -46,7 +46,13 @@
 (add-hook 'sql-mode-hook 'sqlind-minor-mode)
 
 ;;; Python
+(require 'eglot)
 (add-hook 'python-mode-hook 'eglot-ensure)
+(setq-default eglot-workspace-configuration
+    '(:pylsp
+      (:plugins
+        (:pylsp_mypy
+          (:enabled t)))))
 (add-hook 'python-mode-hook #'company-mode)
 (setq python-indent-guess-indent-offset nil)
 
