@@ -19,6 +19,10 @@ if [[ -z $SSH_AUTH_SOCK ]]; then
     eval `keychain --eval --agents ssh`
 fi
 
+if [ -e /home/glenn/.nix-profile/etc/profile.d/nix.sh ]; then
+    . /home/glenn/.nix-profile/etc/profile.d/nix.sh;
+fi # added by Nix installer
+
 if [[ -f ~/nix-zsh-completions/nix.plugin.zsh ]]; then
     . ~/nix-zsh-completions/nix.plugin.zsh
 fi
