@@ -24,11 +24,13 @@
 [push]
         autoSetupRemote = true
         # Push current branch even if you've never pushed it before
-	default = current
+	default = simple
 [diff]
         algorithm = histogram
 [rerere]
         enabled = true
+[remote]
+        pushDefault = origin
 [includeIf "gitdir/i:~/octopus/"]
         path = ~/.gitconfig-octopus
 [includeIf "gitdir/i:C:/Users/Glenn/"]
