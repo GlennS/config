@@ -11,13 +11,11 @@
 ;; Make M-q formatting produce longer lines.
 (setq-default fill-column 100)
 
-;; Change M-x <space> to toggle between ' ' and ''.
-(substitute-key-definition
- 'just-one-space
- (lambda ()
-   (interactive)
-   (cycle-spacing -1))
- (current-global-map))
+;; Change M-SPC to also squash newlines
+(global-set-key (kbd "M-SPC")
+                (lambda ()
+                  (interactive)
+                  (cycle-spacing -1)))
 
 (global-set-key (kbd "C-S-<insert>") 'yank) ; For consistency with xterm
 
