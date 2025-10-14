@@ -26,6 +26,7 @@
 (require 'my-programs)
 (require 'my-theme)
 (require 'my-editing)
+(require 'my-regexp-and-cursors)
 (require 'my-dired)
 (require 'my-magit)
 (require 'ruffify)
