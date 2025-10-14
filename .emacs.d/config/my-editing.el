@@ -58,12 +58,6 @@
 (with-eval-after-load 'org
   (define-key org-mode-map (kbd "C-c SPC") nil))
 
-;; EM-Dash Key
-(defun insert-em-dash ()
-  (interactive)
-  (insert "—"))
-(global-set-key (kbd "C-c m") 'insert-em-dash)
-
 ;; Disable mail key
 (global-unset-key (kbd "C-x m"))
 
