@@ -27,6 +27,7 @@
 (require 'my-theme)
 (require 'my-editing)
 (require 'my-regexp-and-cursors)
+(require 'my-zoom)
 (require 'my-dired)
 (require 'my-magit)
 (require 'ruffify)
