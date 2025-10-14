@@ -18,6 +18,7 @@
 (setq use-package-always-ensure t)
 
 (require 'my-backups)
+(require 'my-buffers)
 (require 'my-file-find)
 (require 'my-org-agenda-files)
 (require 'my-org-mode)
@@ -30,14 +31,6 @@
 (require 'ruffify)
 (require 'my-programming-languages)
 (require 'my-delimiters)
-
-(defun kill-other-buffers ()
-  "Kill all other buffers [http://emacswiki.org/emacs/KillingBuffers#toc2]."
-  (interactive)
-  (mapc 'kill-buffer (delq (current-buffer) (buffer-list))))
-
-;; Remove an annoying prompt when killing buffers opened with emacsclient
-(remove-hook 'kill-buffer-query-functions 'server-kill-buffer-query-function)
 
 ;; Launch an Emacs server
 (server-start)
