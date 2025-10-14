@@ -39,12 +39,6 @@
 ;; Multiple Cursors
 (global-set-key (kbd "C-S-SPC") 'mc/edit-lines)
 
-;; Ace Jump Mode
-;; https://www.emacswiki.org/emacs/AceJump
-(global-set-key (kbd "C-c SPC") 'ace-jump-mode)
-(with-eval-after-load 'org
-  (define-key org-mode-map (kbd "C-c SPC") nil))
-
 ;; Disable mail key
 (global-unset-key (kbd "C-x m"))
 
