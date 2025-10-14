@@ -26,14 +26,8 @@
 ;; No Ctrl-z breaking things
 (global-set-key (kbd "C-z") 'undo)
 
-;; Disable mail key
-(global-unset-key (kbd "C-x m"))
-
 ;; Unicode, thanks
 (prefer-coding-system 'utf-8-unix)
 (setq-default buffer-file-coding-system 'utf-8-unix)
-
-;; Who actually likes the stupid bell?
-(setq ring-bell-function 'ignore)
 
 (provide `my-editing)

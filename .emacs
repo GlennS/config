@@ -14,6 +14,7 @@
 (require 'use-package)
 (setq use-package-always-ensure t)
 
+(require 'my-annoyances)
 (require 'my-backups)
 (require 'my-buffers)
 (require 'my-file-find)
