@@ -1,8 +1,5 @@
 ;;; .emacs
 
-;; When Emacs asks us to customize stuff, here's where it goes
-(setq custom-file "~/.emacs.d/config/custom.el")
-
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
 (package-initialize)
