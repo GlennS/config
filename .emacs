@@ -17,7 +17,7 @@
 (require 'my-annoyances)
 (require 'my-backups)
 (require 'my-buffers)
-(require 'my-file-find)
+(require 'my-completion)
 (require 'my-org-agenda-files)
 (require 'my-org-mode)
 (require 'my-markdown)
