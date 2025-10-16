@@ -1,4 +1,5 @@
 (setq auto-save-default nil)
+(setq create-lockfiles nil)
 
 (setq backup-directory-alist '(("." . "~/backups")))
 ;; Don't put a bunch of files in the backup directory
