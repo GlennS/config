@@ -30,4 +30,8 @@
   (minibuffer-prompt-properties
    '(read-only t cursor-intangible t face minibuffer-prompt)))
 
+(use-package hotfuzz
+  :config
+  (setq completion-styles '(hotfuzz)))
+
 (provide 'my-completion)
