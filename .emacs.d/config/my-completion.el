@@ -1,7 +1,15 @@
+(setq read-file-name-completion-ignore-case t
+      read-buffer-completion-ignore-case t
+      completion-ignore-case t)
+
 (use-package vertico
   :init
   (vertico-mode)
-  (vertico-reverse-mode))
+  (vertico-reverse-mode)
+
+  :bind (:map vertico-map
+              ("M-RET" . vertico-exit-input)
+              ("C-j" . vertico-exit)))
 
 (use-package marginalia
   ;; M-A lets us cycle through margin notes
