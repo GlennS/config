@@ -3,6 +3,21 @@
   ;; We keep it for clarity that we want deferred loading.
   :defer t
 
+  ;; --- Keybindings ---
+  :bind (:map markdown-mode-map
+              ("M-<return>" . 'markdown-insert-header-dwim)
+              ("C-c C-l"    . 'markdown-insert-link)
+              ;; Custom Functions
+              ("M-<up>"     . 'markdown-move-heading-or-row-up)
+              ("M-<down>"   . 'markdown-move-heading-or-row-down)
+              ("M-<left>"   . 'markdown-move-column-left-or-promote)
+              ("M-<right>"  . 'markdown-move-column-right-or-demote)
+              ("M-S-<up>"   . 'markdown-delete-row-or-move-up)
+              ("M-S-<down>" . 'markdown-add-row-or-move-down)
+              ("M-S-<right>" . 'markdown-add-column-or-demote)
+              ("M-S-<left>"  . 'markdown-delete-column-or-promote)
+              ("C-c C-|"    . 'markdown-table-convert-region))
+
   :config
   ;; --- Custom Functions for Table/Heading Movement and Manipulation ---
 
@@ -52,22 +67,9 @@
     "Delete table column, or promote a heading if not at a table."
     (interactive)
     (if (markdown-table-at-point-p) (markdown-table-delete-column)
-      (markdown-promote)))
+      (markdown-promote))))
 
-  ;; --- Keybindings ---
-  :bind
-  (("M-<return>" . 'markdown-insert-header-dwim)
-   ("C-c C-l"    . 'markdown-insert-link)
-   ;; Custom Functions
-   ("M-<up>"     . 'markdown-move-heading-or-row-up)
-   ("M-<down>"   . 'markdown-move-heading-or-row-down)
-   ("M-<left>"   . 'markdown-move-column-left-or-promote)
-   ("M-<right>"  . 'markdown-move-column-right-or-demote)
-   ("M-S-<up>"   . 'markdown-delete-row-or-move-up)
-   ("M-S-<down>" . 'markdown-add-row-or-move-down)
-   ("M-S-<right>" . 'markdown-add-column-or-demote)
-   ("M-S-<left>"  . 'markdown-delete-column-or-promote)
-   ("C-c C-|"    . 'markdown-table-convert-region)))
+
 
 
 (provide `my-markdown)
