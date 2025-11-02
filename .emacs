@@ -8,6 +8,8 @@
   (package-install 'use-package))
 (require 'use-package)
 
+(add-to-list 'default-frame-alist '(fullscreen . maximized))
+
 (add-to-list 'load-path
              (expand-file-name "config" user-emacs-directory))
 
