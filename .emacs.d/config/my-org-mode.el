@@ -8,6 +8,13 @@
   (setq org-todo-keywords
         '((sequence "BLOCKED" "IN-PROGRESS" "TODO" "|" "DONE" "FAILED")))
 
+  ;; Custom agenda view for unscheduled TODOs (C-c a u)
+  (setq org-agenda-custom-commands
+        '(("u" "Unscheduled TODOs"
+           todo ""
+           ((org-agenda-skip-function
+             '(org-agenda-skip-entry-if 'scheduled 'deadline))))))
+
   ;; --- Export Configuration ---
   ;; Disable the Table of Contents on export.
   (setq org-export-with-toc nil)
