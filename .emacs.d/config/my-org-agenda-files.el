@@ -1,7 +1,7 @@
 (setq org-agenda-files
-      `("~/notes/schedule.org"
-        "~/notes/todo.org"
-        "~/octopus/schedule.org"
-        "~/octopus/tasks"))
+      `("~/octopus/schedule.org"
+        "~/octopus/tasks"
+        "~/notes/schedule.org"
+        "~/notes/todo.org"))
 
 (provide `my-org-agenda-files)
