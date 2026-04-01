@@ -1,0 +1,14 @@
+#!/bin/bash
+# Cache 1Password secret in RAM-backed storage to avoid repeated auth prompts.
+# Used as Claude Code's apiKeyHelper.
+
+CACHE_FILE="/run/user/$(id -u)/op-litellm-cache"
+CACHE_TTL=86400  # 24 hours
+
+if [[ -f "$CACHE_FILE" ]] && [[ $(($(date +%s) - $(stat -c %Y "$CACHE_FILE"))) -lt $CACHE_TTL ]]; then
+    cat "$CACHE_FILE"
+else
+    secret=$(op read "op://Employee/litellm/password") || exit 1
+    printf '%s' "$secret" | tee "$CACHE_FILE"
+    chmod 600 "$CACHE_FILE"
+fi
