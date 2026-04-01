@@ -15,6 +15,9 @@ fi
 
 source $HOME/.profile
 
+export VISUAL="emacsclient"
+export EDITOR="emacsclient"
+
 if [[ -z $SSH_AUTH_SOCK ]]; then
     eval `keychain --eval --agents ssh`
 fi
