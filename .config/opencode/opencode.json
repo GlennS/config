@@ -1,0 +1,27 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "provider": {
+    "ollama": {
+      "models": {
+        "gemma4:e4b": {
+          "_launch": true,
+          "name": "Gemma 4 E4B (Balanced)",
+          "options": { "num_ctx": 32768 }
+        },
+        "qwen3-coder:7b": {
+          "name": "Qwen 3 Coder (Python Pro)",
+          "options": { "num_ctx": 16384 }
+        },
+        "deepseek-v3.2:coder-7b": {
+          "name": "DeepSeek (Elisp/Reasoning)",
+          "options": { "num_ctx": 16384 }
+        }
+      },
+      "name": "Ollama (local)",
+      "npm": "@ai-sdk/openai-compatible",
+      "options": {
+        "baseURL": "http://127.0.0.1:11434/v1"
+      }
+    }
+  }
+}
