@@ -13,7 +13,11 @@
         '(("u" "Unscheduled TODOs"
            todo ""
            ((org-agenda-skip-function
-             '(org-agenda-skip-entry-if 'scheduled 'deadline))))))
+             '(org-agenda-skip-entry-if 'scheduled 'deadline))
+            (org-agenda-category-filter-preset '("-home" "-extra" "-learning"))
+            (org-agenda-sorting-strategy '(priority-down category-up))))))
+
+  (setq org-priority-default ?@)
 
   ;; --- Export Configuration ---
   ;; Disable the Table of Contents on export.
