@@ -8,9 +8,15 @@
   (setq org-todo-keywords
         '((sequence "BLOCKED" "IN-PROGRESS" "TODO" "|" "DONE" "FAILED")))
 
-  ;; Custom agenda view for unscheduled TODOs (C-c a u)
+  ;; Custom agenda views
   (setq org-agenda-custom-commands
-        '(("u" "Unscheduled TODOs"
+        '(("h" "Home TODOs"
+           todo ""
+           ((org-agenda-skip-function
+             '(org-agenda-skip-entry-if 'scheduled 'deadline))
+            (org-agenda-category-filter-preset '("+home"))
+            (org-agenda-sorting-strategy '(priority-down category-up))))
+          ("w" "Work TODOs"
            todo ""
            ((org-agenda-skip-function
              '(org-agenda-skip-entry-if 'scheduled 'deadline))
