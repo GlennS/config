@@ -33,5 +33,5 @@
         pushDefault = origin
 [includeIf "gitdir/i:~/octopus/"]
         path = ~/.gitconfig-octopus
-[includeIf "gitdir/i:C:/Users/Glenn/"]
-        path = ~/.gitconfig-windows
+[includeIf "gitdir/i:C:/**"]
+    path = ~/.gitconfig-windows
