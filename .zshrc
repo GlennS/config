@@ -89,6 +89,15 @@ alias config='git --git-dir=$HOME/config.git/ --work-tree=$HOME'
 alias spatialite='rlwrap spatialite'
 alias sqlite3='rlwrap sqlite3'
 
+worktree-remove-all() {
+  local main
+  main=$(git rev-parse --show-toplevel) || return
+  git worktree list --porcelain \
+    | awk '/^worktree /{print $2}' \
+    | grep -vxF "$main" \
+    | xargs -r -I{} git worktree remove --force {}
+}
+
 
 alias clear-merged-branches='git branch -d $(git branch --merged | grep -v "\*\|master" | xargs)'
 alias clear-empty-dirs="find . -type d -empty -delete"
@@ -129,6 +138,6 @@ export PIP_REQUIRE_VIRTUALENV=true
 # opencode
 export PATH=/home/glenn/.opencode/bin:$PATH
 
-if [[ -e .zshrc-kraken ]]; then
+if [[ -f ~/.zshrc-kraken ]]; then
     . ~/.zshrc-kraken
 fi
