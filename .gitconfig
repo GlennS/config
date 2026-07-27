@@ -5,6 +5,7 @@
 	email = glenn.searby@gmail.com
 [alias]
         recent = "!git branch --sort=-committerdate --format='%(committerdate:relative)%09%(refname:short)' | head -n 10"
+	autosquash = !GIT_SEQUENCE_EDITOR=true git rebase -i --autosquash
 [merge]
 	tool = meld
         conflictstyle = zdiff3
