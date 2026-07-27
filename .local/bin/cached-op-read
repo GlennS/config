@@ -2,13 +2,43 @@
 # Cache 1Password secret in RAM-backed storage to avoid repeated auth prompts.
 # Used as Claude Code's apiKeyHelper.
 
-CACHE_FILE="/run/user/$(id -u)/op-litellm-cache"
-CACHE_TTL=86400  # 24 hours
+set -u
 
-if [[ -f "$CACHE_FILE" ]] && [[ $(($(date +%s) - $(stat -c %Y "$CACHE_FILE"))) -lt $CACHE_TTL ]]; then
-    cat "$CACHE_FILE"
-else
-    secret=$(op read "op://Employee/litellm/password") || exit 1
-    printf '%s' "$secret" | tee "$CACHE_FILE"
-    chmod 600 "$CACHE_FILE"
+CACHE_FILE="/run/user/$(id -u)/op-litellm-cache"
+CACHE_TTL=604800  # 7 days
+KEY_RE='^sk-'
+
+if [[ -f "$CACHE_FILE" ]] && (( $(date +%s) - $(stat -c %Y "$CACHE_FILE") < CACHE_TTL )); then
+    cached=$(<"$CACHE_FILE")
+    if [[ "$cached" =~ $KEY_RE ]]; then
+        printf '%s' "$cached"
+        exit 0
+    fi
+    rm -f "$CACHE_FILE"
 fi
+
+if ! pgrep -x 1password >/dev/null; then
+    echo "cached-op-read: 1Password is not running. Start it and retry." >&2
+    exit 1
+fi
+
+err_file=$(mktemp)
+trap 'rm -f "$err_file" "${tmp:-}"' EXIT
+
+if ! secret=$(op read "op://Employee/litellm/password" 2>"$err_file"); then
+    echo "cached-op-read: op read failed:" >&2
+    cat "$err_file" >&2
+    exit 1
+fi
+
+if [[ ! "$secret" =~ $KEY_RE ]]; then
+    echo "cached-op-read: fetched value does not look like an API key; refusing to cache." >&2
+    exit 1
+fi
+
+tmp=$(mktemp "${CACHE_FILE}.XXXXXX")
+printf '%s' "$secret" > "$tmp"
+chmod 600 "$tmp"
+mv "$tmp" "$CACHE_FILE"
+
+printf '%s' "$secret"
