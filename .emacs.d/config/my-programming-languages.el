@@ -10,6 +10,10 @@
   :defer t
   :mode ("\\.js\\'"))
 
+(defun disable-js-final-newline ()
+  "Don't add newlines when writing JavaScript."
+  (setq-local require-final-newline nil))
+
 (use-package rjsx-mode
   :defer t
   :config
@@ -21,12 +25,9 @@
   (setq js2-mode-show-parse-errors nil
         js2-mode-show-strict-warnings nil)
 
-
-  :hook (('rjsx-mode . 'flycheck-mode) ; Use Flycheck instead of js2/rjsx for error checking.
-         ('js-mode . #'(lambda () ; Don't add newlines when writing JavaScript
-                         (set (make-local-variable 'require-final-newline)
-                              nil))))
-
+  ;; rjsx-mode derives from js-mode, so js-mode-hook fires for .js and .jsx too.
+  :hook ((rjsx-mode . flycheck-mode)
+         (js-mode . disable-js-final-newline))
 
   ;; Associate rjsx-mode with .js and .jsx files
   :mode (("\\.js\\'" . rjsx-mode)
