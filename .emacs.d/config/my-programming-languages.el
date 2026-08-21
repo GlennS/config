@@ -96,7 +96,7 @@
 
 ;;; --- Latex ---
 ;; Flymake is built-in; no use-package needed for the hook.
-(add-hook 'latex-mode-hook #'(lambda () (flymake-mode)))
+(add-hook 'latex-mode-hook #'flymake-mode)
 
 ;;; --- Nix ---
 (use-package nix-mode
