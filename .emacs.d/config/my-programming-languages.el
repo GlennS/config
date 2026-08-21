@@ -1,7 +1,9 @@
 ;;; --- Global/Everything ---
 (use-package dumb-jump
-  :config
-  (dumb-jump-mode 1))
+  :defer t
+  :init
+  ;; Appended, so dumb-jump only answers when a real backend (eglot) declines.
+  (add-hook 'xref-backend-functions #'dumb-jump-xref-activate t))
 
 ;;; --- JavaScript (js2-mode, rjsx-mode) ---
 (use-package js2-mode
