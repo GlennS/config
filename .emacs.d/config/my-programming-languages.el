@@ -68,6 +68,12 @@
   :defer t
   :hook (sql-mode . sqlind-minor-mode))
 
+;;; --- YAML ---
+;; TODO: switch to the built-in yaml-ts-mode once a tree-sitter grammar is installed.
+(use-package yaml-mode
+  :defer t
+  :mode ("\\.ya?ml\\'" . yaml-mode))
+
 ;;; --- Python ---
 (use-package python
   :defer t
