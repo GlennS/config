@@ -7,5 +7,5 @@ style = { blinking = "On" }
 size = 14.0
 
 [font.normal]
-family = "DejaVu Sans Mono"
-style = "Book"
+family = "DejaVuSansM Nerd Font"
+style = "Regular"
