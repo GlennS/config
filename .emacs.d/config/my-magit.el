@@ -13,6 +13,10 @@
   (setq magit-revert-buffers t) ; Automatically refresh affected buffers.
   (setq magit-diff-refine-hunk t) ; Word diffs
 
+  ;; I don't read the Tags: header, and it costs two git describe calls on every
+  ;; status refresh.
+  (remove-hook 'magit-status-headers-hook #'magit-insert-tags-header)
+
   ;; General Version Control Settings (often relevant to Magit usage)
   (setq vc-follow-symlinks nil))
 
