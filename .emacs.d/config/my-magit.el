@@ -21,6 +21,32 @@
   (setq vc-follow-symlinks nil))
 
 (use-package browse-at-remote
-  :bind (("C-c C-g" . browse-at-remote)))
+  :bind (("C-c C-g" . browse-at-remote))
+
+  :config
+  (defun my-browse-at-remote-default-branch (remote)
+    "Name of REMOTE's default branch, or \"master\" if git doesn't say."
+    ;; `vc-git--run-command-string' returns nil on a non-zero exit, which is
+    ;; what happens when refs/remotes/<remote>/HEAD doesn't exist.
+    (let ((head (vc-git--run-command-string
+                 nil "symbolic-ref" "--short"
+                 (format "refs/remotes/%s/HEAD" remote))))
+      (if head
+          (s-chop-prefix (format "%s/" remote) (s-trim head))
+        "master")))
+
+  (defun my-browse-at-remote-use-default-branch (result)
+    "Replace the ref in RESULT with the remote's default branch.
+Links to the branch or commit that happens to be checked out rot once
+that branch is gone, so they're no use to share."
+    (when result
+      (cons (car result)
+            ;; The remote name isn't in RESULT, so re-derive it the same way
+            ;; `browse-at-remote--remote-ref' does for a detached head.
+            (my-browse-at-remote-default-branch
+             (browse-at-remote--get-preferred-remote)))))
+
+  (advice-add 'browse-at-remote--remote-ref :filter-return
+              #'my-browse-at-remote-use-default-branch))
 
 (provide `my-magit)
