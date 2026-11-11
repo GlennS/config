@@ -4,6 +4,6 @@
     "include": "~/.config/waybar/config.jsonc",
     // style.css uses this name to make the bar smaller.
     "name": "laptop",
-    "modules-left": [],
+    "modules-left": ["sway/workspaces", "sway/mode"],
     "modules-right": ["battery", "network#wifi", "clock", "tray"]
 }
