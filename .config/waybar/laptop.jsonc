@@ -1,0 +1,9 @@
+// The laptop kanshi profile starts waybar with this file: a small bar for when
+// the laptop panel is the only monitor.
+{
+    "include": "~/.config/waybar/config.jsonc",
+    // style.css uses this name to make the bar smaller.
+    "name": "laptop",
+    "modules-left": [],
+    "modules-right": ["battery", "network#wifi", "clock", "tray"]
+}

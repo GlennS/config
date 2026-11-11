@@ -8,5 +8,5 @@ profile home {
 
 profile laptop {
   output eDP-1 mode 1920x1080 position 0,0 scale 1.75
-  exec pkill -x waybar; waybar
+  exec pkill -x waybar; waybar -c ~/.config/waybar/laptop.jsonc
 }

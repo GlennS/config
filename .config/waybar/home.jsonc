@@ -1,5 +1,6 @@
-// The home kanshi profile starts waybar with this file. Other kanshi profiles
-// use config.jsonc, which shows the full bar on all outputs.
+// The home kanshi profile starts waybar with this file, and the laptop profile
+// uses laptop.jsonc. Other kanshi profiles use config.jsonc, which shows the
+// full bar on all outputs.
 [
     // The full bar, only on the middle monitor.
     {

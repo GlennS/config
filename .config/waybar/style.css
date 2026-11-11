@@ -52,3 +52,8 @@ window#waybar {
 #network.wifi {
     color: #00ff00;
 }
+
+/* The small bar of the laptop kanshi profile. */
+window#waybar.laptop * {
+    font-size: 11pt;
+}
