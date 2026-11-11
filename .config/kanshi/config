@@ -10,3 +10,20 @@ profile laptop {
   output eDP-1 mode 1920x1080 position 0,0 scale 1.75
   exec pkill -x waybar; waybar -c ~/.config/waybar/laptop.jsonc
 }
+
+# The fallback profiles below must stay last, because kanshi uses the first profile that matches.
+# They leave the position and mode of each monitor to sway, and show the full bar on all of them.
+
+# Unknown monitors with the laptop panel.
+profile fallback-with-laptop {
+  output "Sharp Corporation 0x14AE Unknown" scale 1.75
+  ...output *
+  exec pkill -x waybar; waybar -c ~/.config/waybar/config.jsonc
+}
+
+# Unknown monitors without the laptop panel. The panel stays connected when the lid closes,
+# so a closed lid does not select this profile.
+profile fallback {
+  ...output *
+  exec pkill -x waybar; waybar -c ~/.config/waybar/config.jsonc
+}
