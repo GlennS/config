@@ -173,9 +173,10 @@ assign [class="(?i)^spotify$"] 4:chat
 
 assign [app_id="ZSTray"] 5:vpn
 
-exec kanshi
 # A reload resets the outputs to this file, which has none, so kanshi must apply its profile again.
-exec_always pkill -HUP -x kanshi
+# One command does both jobs: a separate "exec kanshi" races with the HUP, and the HUP can kill
+# kanshi before kanshi sets its signal handler. pkill fails when no kanshi runs, so this starts it.
+exec_always pkill -HUP -x kanshi || kanshi
 
 exec emacs
 
