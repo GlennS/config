@@ -173,10 +173,20 @@ assign [class="(?i)^spotify$"] 4:chat
 
 assign [app_id="ZSTray"] 5:vpn
 
-# A reload resets the outputs to this file, which has none, so kanshi must apply its profile again.
+# A reload resets the outputs to this file, which sets only the panel scale, so kanshi must apply
+# its profile again.
 # One command does both jobs: a separate "exec kanshi" races with the HUP, and the HUP can kill
 # kanshi before kanshi sets its signal handler. pkill fails when no kanshi runs, so this starts it.
 exec_always pkill -HUP -x kanshi || kanshi
+
+# With external monitors connected, logind ignores the lid, so the panel stays on behind a closed
+# lid and keeps its workspaces. --reload applies the lid state again after a reload.
+bindswitch --reload --locked lid:on output $laptop disable
+bindswitch --reload --locked lid:off output $laptop enable
+
+# After a reload with the panel off, "output enable" uses only this file, so without this line
+# the panel comes back at scale 1.0. Keep it the same as the scale in the kanshi profiles.
+output $laptop scale 1.75
 
 exec emacs
 
