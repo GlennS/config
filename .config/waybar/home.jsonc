@@ -1,0 +1,27 @@
+// The home kanshi profile starts waybar with this file. Other kanshi profiles
+// use config.jsonc, which shows the full bar on all outputs.
+[
+    // The full bar, only on the middle monitor.
+    {
+        "include": "~/.config/waybar/config.jsonc",
+        "output": "Dell Inc. DELL P2723QE 8DFK7L3",
+        // The same modules as in config.jsonc, but the webcam covers the middle
+        // of the bar, so some modules move to the left side. With more than
+        // three workspaces on this monitor, they move under the webcam again.
+        "modules-left": [
+            "sway/workspaces",
+            "sway/mode",
+            "network#ethernet",
+            "cpu",
+            "battery"
+        ],
+        "modules-right": ["network#wifi", "clock", "tray"]
+    },
+    // The other monitors show only their own workspaces.
+    {
+        "output": ["Dell Inc. DELL U2415 5K39C69N152L", "eDP-1"],
+        "position": "top",
+        "modules-left": ["sway/workspaces", "sway/mode"],
+        "modules-right": []
+    }
+]

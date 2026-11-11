@@ -1,0 +1,53 @@
+// See man 5 waybar.
+{
+    "position": "top",
+    "modules-left": ["sway/workspaces", "sway/mode"],
+    "modules-right": [
+        "network#ethernet",
+        "cpu",
+        "battery",
+        "network#wifi",
+        "clock",
+        "tray"
+    ],
+
+    "network#ethernet": {
+        "interface": "en*",
+        "format-ethernet": "Eth: up",
+        "format-linked": "Eth: down",
+        "format-disconnected": "Eth: down",
+        "tooltip-format": "{ifname} {ipaddr}/{cidr}"
+    },
+
+    "cpu": {
+        "format": "CPU: {usage}%",
+        "interval": 5
+    },
+
+    // With no "bat" set, waybar combines all batteries.
+    "battery": {
+        "format": "Battery: {capacity}%",
+        "states": {
+            "critical": 30
+        },
+        "interval": 5
+    },
+
+    "network#wifi": {
+        "interface": "wl*",
+        "format-wifi": "Wifi:{signalStrength}% {essid}",
+        "format-linked": "Wifi: down",
+        "format-disconnected": "Wifi: down",
+        "tooltip-format": "{ifname} {ipaddr}/{cidr}"
+    },
+
+    "clock": {
+        "format": "{:%Y-%m-%d %H:%M:%S}",
+        "interval": 1,
+        "tooltip": false
+    },
+
+    "tray": {
+        "spacing": 8
+    }
+}
