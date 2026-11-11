@@ -1,0 +1,197 @@
+# See man 5 sway for a complete reference.
+
+set $mod Mod4
+
+# Monitors, by EDID description so that a monitor keeps its role on any port.
+set $middle "Dell Inc. DELL P2723QE 8DFK7L3"
+set $laptop "Sharp Corporation 0x14AE Unknown"
+
+# Font for window titles.
+font pango:DejaVu Sans Mono 14
+
+input type:keyboard {
+    xkb_layout gb
+    xkb_model pc105
+    # No capslock
+    xkb_options ctrl:nocaps
+}
+
+# Why would anyone want this key?
+bindsym Insert exec "echo '';"
+
+# Moving the mouse doesn't change which window is active.
+focus_follows_mouse no
+
+# Lock the screen and turn it off.
+bindsym $mod+l exec ~/.config/sway/lock.sh
+
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod normal
+
+# start a terminal
+bindsym $mod+Shift+Return exec alacritty
+
+# kill focused window
+bindsym $mod+Shift+q kill
+
+# start a program launcher
+bindsym $mod+d exec fuzzel --font 'Droid Sans Mono:size=20'
+
+# 1Password cannot grab a global shortcut on Wayland, so sway binds it.
+bindsym Ctrl+Shift+space exec /opt/1Password/1password --quick-access
+
+# Change focus using cursor keys
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# Move windows using cursor keys
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+bindsym $mod+Shift+o move workspace to output up
+bindsym $mod+Shift+l move workspace to output down
+bindsym $mod+Shift+comma move workspace to output left
+bindsym $mod+Shift+period move workspace to output right
+
+# enter fullscreen mode for the focused container
+bindsym $mod+Return fullscreen
+
+# change container layout (stacked, tabbed, toggle split)
+# bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout splith
+
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+
+# switch to workspace
+bindsym $mod+1 workspace 1:editing
+bindsym $mod+2 workspace 2:browsing
+bindsym $mod+3 workspace 3:terminals
+bindsym $mod+4 workspace 4:chat
+bindsym $mod+5 workspace 5:vpn
+bindsym $mod+6 workspace 6
+bindsym $mod+7 workspace 7
+bindsym $mod+8 workspace 8
+bindsym $mod+9 workspace 9
+bindsym $mod+0 workspace 10
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace 1:editing
+bindsym $mod+Shift+2 move container to workspace 2:browsing
+bindsym $mod+Shift+3 move container to workspace 3:terminals
+bindsym $mod+Shift+4 move container to workspace 4:chat
+bindsym $mod+Shift+5 move container to workspace 5:vpn
+bindsym $mod+Shift+6 move container to workspace 6
+bindsym $mod+Shift+7 move container to workspace 7
+bindsym $mod+Shift+8 move container to workspace 8
+bindsym $mod+Shift+9 move container to workspace 9
+bindsym $mod+Shift+0 move container to workspace 10
+
+# reload the configuration file
+bindsym $mod+Shift+c reload
+
+set $mode_exit Exit: (s)hutdown, (r)eboot, or (l)ogout
+mode "$mode_exit" {
+     bindsym s exec systemctl poweroff -i, mode "default"
+     bindsym r exec systemctl reboot, mode "default"
+     bindsym l exec swaymsg exit, mode "default"
+
+     ## back to normal: Enter or Escape
+     bindsym Return mode "default"
+     bindsym Escape mode "default"
+}
+
+# exit sway
+bindsym $mod+Shift+e mode "$mode_exit"
+
+
+# resize window (you can also use the mouse for that)
+mode "resize" {
+        # These bindings trigger as soon as you enter the resize mode
+
+        # Pressing left will shrink the window’s width.
+        # Pressing right will grow the window’s width.
+        # Pressing up will shrink the window’s height.
+        # Pressing down will grow the window’s height.
+        bindsym j resize shrink width 10 px or 10 ppt
+        bindsym k resize grow height 10 px or 10 ppt
+        bindsym l resize shrink height 10 px or 10 ppt
+        bindsym semicolon resize grow width 10 px or 10 ppt
+
+        # same bindings, but for the arrow keys
+        bindsym Left resize shrink width 10 px or 10 ppt
+        bindsym Down resize grow height 10 px or 10 ppt
+        bindsym Up resize shrink height 10 px or 10 ppt
+        bindsym Right resize grow width 10 px or 10 ppt
+
+        # back to normal: Enter or Escape
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+bindsym $mod+r mode "resize"
+
+## Disable scrollwheel on title bars
+bindsym button4 nop
+bindsym button5 nop
+
+# waybar, not swaybar, because the swaybar tray cannot show the right-click
+# menus of nm-applet and blueman. The bar layout is in ~/.config/waybar/.
+# There is no bar block: each kanshi profile starts waybar for its own outputs,
+# and the exec_always line below makes kanshi do this again on each reload.
+
+workspace_layout tabbed
+
+# Workspace 1 goes to the middle monitor if available, falling back to the laptop monitor
+workspace 1:editing output $middle $laptop
+# Workspace 2 goes to the middle monitor if available, falling back to the laptop monitor.
+workspace 2:browsing output $middle $laptop
+# Other workspaces go straight to the laptop monitor.
+workspace 3:terminals output $laptop
+workspace 4:chat output $laptop
+workspace 5:vpn output $laptop
+
+# class matches XWayland windows; app_id matches native Wayland windows.
+assign [class="(?i)^emacs$"] 1:editing
+
+assign [app_id="^firefox"] 2:browsing
+
+assign [class="KeePass2"] 3:terminals
+
+assign [app_id="Alacritty"] 3:terminals
+
+assign [app_id="(?i)^slack$"] 4:chat
+assign [class="(?i)^spotify$"] 4:chat
+
+assign [app_id="ZSTray"] 5:vpn
+
+exec kanshi
+# A reload resets the outputs to this file, which has none, so kanshi must apply its profile again.
+exec_always pkill -HUP -x kanshi
+
+exec emacs
+
+exec swaymsg "workspace 1:editing"
+
+exec nm-applet --indicator
+exec pasystray
+exec blueman-applet
+exec systemctl --user start ZSTray
+exec flameshot
+exec udiskie
+exec /opt/1Password/1password --silent
+
+# Sends WAYLAND_DISPLAY and friends to systemd and D-Bus, which screen sharing needs.
+include /etc/sway/config.d/*
+
+# The portals keep running from one login to the next, and they read
+# XDG_CURRENT_DESKTOP only at start. Restart them after the variables arrive.
+exec dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK XDG_CURRENT_DESKTOP=sway && systemctl --user restart xdg-desktop-portal xdg-desktop-portal-gtk
