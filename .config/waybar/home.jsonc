@@ -19,8 +19,10 @@
         "modules-right": ["network#wifi", "clock", "tray"]
     },
     // The other monitors show only their own workspaces.
+    // The laptop panel has no serial number. Sway and kanshi put "Unknown" in
+    // its place, but waybar leaves the serial out.
     {
-        "output": ["Dell Inc. DELL U2415 5K39C69N152L", "eDP-1"],
+        "output": ["Dell Inc. DELL U2415 5K39C69N152L", "Sharp Corporation 0x14AE"],
         "position": "top",
         "modules-left": ["sway/workspaces", "sway/mode"],
         "modules-right": []
