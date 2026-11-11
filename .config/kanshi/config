@@ -11,6 +11,16 @@ profile laptop {
   exec pkill -x waybar; waybar -c ~/.config/waybar/laptop.jsonc
 }
 
+# Tash's office, with two Dell monitors on a DisplayLink dock. The sway lid bindings turn the panel
+# off when the lid is closed, so this profile also covers that case.
+profile tash-office {
+  output "Sharp Corporation 0x14AE Unknown" mode 1920x1080 position 0,463 scale 1.75
+  # Without the rate, kanshi can pick the 75 Hz mode of the S2421HS.
+  output "Dell Inc. DELL S2421HS 8FPP9H3" mode 1920x1080@60Hz position 1097,0
+  output "Dell Inc. DELL S2319H 71P7K93M038T" mode 1920x1080@60Hz position 3017,0
+  exec pkill -x waybar; waybar -c ~/.config/waybar/tash-office.jsonc
+}
+
 # The fallback profiles below must stay last, because kanshi uses the first profile that matches.
 # They leave the position and mode of each monitor to sway, and show the full bar on all of them.
 

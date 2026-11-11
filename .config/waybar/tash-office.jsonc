@@ -1,0 +1,20 @@
+// The tash-office kanshi profile starts waybar with this file.
+[
+    // The full bar, only on the left Dell monitor.
+    {
+        "include": "~/.config/waybar/config.jsonc",
+        "output": "Dell Inc. DELL S2421HS 8FPP9H3"
+    },
+    // The other monitors show only their own workspaces.
+    // The laptop panel has no serial number. Sway and kanshi put "Unknown" in
+    // its place, but waybar leaves the serial out.
+    {
+        "output": [
+            "Dell Inc. DELL S2319H 71P7K93M038T",
+            "Sharp Corporation 0x14AE"
+        ],
+        "position": "top",
+        "modules-left": ["sway/workspaces", "sway/mode"],
+        "modules-right": []
+    }
+]
