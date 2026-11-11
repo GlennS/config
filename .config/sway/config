@@ -4,6 +4,8 @@ set $mod Mod4
 
 # Monitors, by EDID description so that a monitor keeps its role on any port.
 set $middle "Dell Inc. DELL P2723QE 8DFK7L3"
+# The primary monitor in Tash's office.
+set $tash_office_primary "Dell Inc. DELL S2421HS 8FPP9H3"
 set $laptop "Sharp Corporation 0x14AE Unknown"
 
 # Font for window titles.
@@ -150,10 +152,9 @@ bindsym button5 nop
 
 workspace_layout tabbed
 
-# Workspace 1 goes to the middle monitor if available, falling back to the laptop monitor
-workspace 1:editing output $middle $laptop
-# Workspace 2 goes to the middle monitor if available, falling back to the laptop monitor.
-workspace 2:browsing output $middle $laptop
+# Workspaces 1 and 2 go to the first of these monitors that is connected.
+workspace 1:editing output $middle $tash_office_primary $laptop
+workspace 2:browsing output $middle $tash_office_primary $laptop
 # Other workspaces go straight to the laptop monitor.
 workspace 3:terminals output $laptop
 workspace 4:chat output $laptop
