@@ -170,7 +170,7 @@ assign [class="KeePass2"] 3:terminals
 assign [app_id="Alacritty"] 3:terminals
 
 assign [app_id="(?i)^slack$"] 4:chat
-assign [class="(?i)^spotify$"] 4:chat
+assign [app_id="(?i)^spotify$"] 4:chat
 
 assign [app_id="ZSTray"] 5:vpn
 
