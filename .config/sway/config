@@ -187,7 +187,7 @@ bindswitch --reload --locked lid:off output $laptop enable
 
 # After a reload with the panel off, "output enable" uses only this file, so without this line
 # the panel comes back at scale 1.0. Keep it the same as the scale in the kanshi profiles.
-output $laptop scale 1.75
+output $laptop scale 1.5
 
 exec emacs
 
