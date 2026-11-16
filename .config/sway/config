@@ -161,7 +161,7 @@ workspace 4:chat output $laptop
 workspace 5:vpn output $laptop
 
 # class matches XWayland windows; app_id matches native Wayland windows.
-assign [class="(?i)^emacs$"] 1:editing
+assign [app_id="(?i)^emacs$"] 1:editing
 
 assign [app_id="^firefox"] 2:browsing
 
